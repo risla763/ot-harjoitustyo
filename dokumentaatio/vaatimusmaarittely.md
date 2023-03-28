@@ -10,10 +10,14 @@ Sovellukseen luodaan käyttäjätunnus.
 Sovelluksessa voisi olla jonkinlainen "ranking" systeemi, eli kun on pelannut peliä niin se miten hyvin on pärjännyt kirjataan ylös.
 
 Pelin toimintaan tarvittavat asiat:
+
 -Tietokone, joka osaa pelata ja panostaa.
+
 -Tietokanta, joka pitää kirjaa käyttäjätunnuksista.
--Pelikortit, mitä voi siirrellä näytöllä
--Valuutta, jonka kanssa pelissä panostetaan
+
+-Pelikortit, mitä voi siirrellä näytöllä.
+
+-Valuutta, jonka kanssa pelissä panostetaan.
 
 Perusversio:
 Peli jossa voi pelata tietokonetta vastaan panostamatta.
