@@ -1,4 +1,4 @@
-Sovellus idea:
+Sovellusidea:
 Yksinkertainen Texas Hold'em
 
 Tarkoitus: 
