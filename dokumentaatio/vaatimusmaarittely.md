@@ -2,8 +2,8 @@ Sovellus idea:
 Yksinkertainen Texas Hold'em
 
 Tarkoitus: 
-Voi pelata Texa's Hold'em peliä tietokonetta vastaan. 
-Pelissä voisi olla jotain valuuttaa ns tekorahaa jonka kanssa voisi panostaa niin kuin oikeassa pokerissa.
+Voi pelata Texas Hold'em peliä tietokonetta vastaan. 
+Pelissä voisi olla jotain valuuttaa ns. tekorahaa, jonka kanssa voisi panostaa eri kierroksilla niin kuin oikeassa pokerissa.
 
 Käyttäjät:
 Sovellukseen luodaan käyttäjätunnus. 
