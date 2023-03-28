@@ -20,7 +20,7 @@ Pelin toimintaan tarvittavat asiat:
 -Valuutta, jonka kanssa pelissä panostetaan.
 
 Perusversio:
-Peli jossa voi pelata tietokonetta vastaan panostamatta.
+Peli jossa voi pelata tietokonetta vastaan (ilman panostamista).
 
 Jatkokehitysideat:
 Ranking
