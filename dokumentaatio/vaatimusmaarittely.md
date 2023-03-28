@@ -28,5 +28,5 @@ Jatkokehitysideat:
 
 -Panostaminen
 
--co-op (voi pelata muita pelin käyttäjiä vastaan)
+-co-op (voi pelata muita käyttäjiä vastaan)
 
