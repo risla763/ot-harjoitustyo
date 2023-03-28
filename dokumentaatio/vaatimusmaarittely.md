@@ -23,7 +23,10 @@ Perusversio:
 Peli jossa voi pelata tietokonetta vastaan (ilman panostamista).
 
 Jatkokehitysideat:
-Ranking
-Panostaminen
-co-op (voi pelata muita pelin käyttäjiä vastaan)
+
+-Ranking
+
+-Panostaminen
+
+-co-op (voi pelata muita pelin käyttäjiä vastaan)
 
