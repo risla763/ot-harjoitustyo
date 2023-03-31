@@ -1,5 +1,5 @@
-#otsikko
-~~Tämä on tekstiä,**_tämä on tärkeää tekstiä**
-*Tämä on normaalia tekstiä*
-##alaotsikko
-~~muutos~
+Linkki vaatimusmäärittelyyn:
+https://github.com/maijarislakki/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md
+
+Linkki työkirjanpitoon:
+https://github.com/maijarislakki/ot-harjoitustyo/blob/master/dokumentaatio/tyokirjanpito.md
