@@ -1,6 +1,6 @@
 ##Viikko 2
 
--Projektion kansiot luotu
+-Projektin kansiot luotu
 
 ##Viikko 3
 
