@@ -1,5 +1,5 @@
-Linkki vaatimusmäärittelyyn:
-https://github.com/maijarislakki/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md
+[Vaatimusmäärittely](https://github.com/maijarislakki/ot-harjoitustyo/blob/master/seurapeli/dokumentaatio/vaatimusmaarittely.md)
 
-Linkki työkirjanpitoon:
-https://github.com/maijarislakki/ot-harjoitustyo/blob/master/dokumentaatio/tyokirjanpito.md
+[Työkirjanpito](https://github.com/maijarislakki/ot-harjoitustyo/blob/master/seurapeli/dokumentaatio/tyokirjanpito.md)
+
+[Changelog.md](https://github.com/maijarislakki/ot-harjoitustyo/blob/master/seurapeli/dokumentaatio/changelog.md)
