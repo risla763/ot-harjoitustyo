@@ -2,6 +2,7 @@ import pygame
 import random
 import os
 from PIL import Image
+import time
 
 class Card:
     def __init__(self, suit, rank, cards): #yksittäinen kortti
@@ -46,13 +47,12 @@ class Deck: #korttipakka
         random.shuffle(self.cards) #sekoitetaan pakkaa
 
     def draw(self, surface, pos): #piirtää koko pakan
-        a = 300
+        a = 650
         i = 0
         for n,card in enumerate(self.cards): #i on indeksi (kuinka mones) mutta loopissa toimitaan tuplejen kanssa #i, 
-            print(i)
             if i >= 50:
                 card.draw(surface, (a,100))
-                a += 800
+                a += 550
             else:
                 card.draw(surface, (100,100)) #tämä pistää kortin kuvan näytölle (x,y) #(pos[0] + i * 20, pos[1]) koritit levitettyinä #piirrä kolme viimeistä levitettyinä
                 #tämä pistää kortin kuvan näytölle (x,y) #(pos[0] + i * 20, pos[1]) koritit levitettyinä #piirrä kolme viimeistä levitettyinä
@@ -67,13 +67,23 @@ pygame.init()
 screen_width = 1800
 screen_height = 1000
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("Card Deck")
+pygame.display.set_caption("F the dealer")
+color = (0,181,20)
+screen.fill(color)
+pygame.display.flip()
+font = pygame.font.Font(None, 36)
+start_time = time.time()
+
+    
+
+
+
 
 # Create a deck of cards
 deck = Deck()
 
 # Draw the deck of cards PIIRTÄÄ KORTTIPAKAN
-deck.draw(screen, (100, 100))
+deck.draw(screen, (10, 10))
 
 # Deal a card and draw it on the screen #yksittäinen kortti
 card = deck.deal()
@@ -88,3 +98,16 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
+
+        
+    rectangle = pygame.Rect(0,0,50,50)
+    pygame.draw.rect(screen, color, rectangle)
+    #screen.fill(color)
+    elapsed_time = int(time.time() - start_time)
+
+
+    # Render the timer display
+    timer_display = font.render(f"Time: {elapsed_time}", True, (255, 255, 255))
+    screen.blit(timer_display, (10, 10))
+
+    pygame.display.update()
