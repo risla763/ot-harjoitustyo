@@ -1,32 +1,37 @@
 Sovellusidea:
-Yksinkertainen Texas Hold'em
+Juomapeli (F the dealer) tai ainakin jokin versio siitä 
 
 Tarkoitus: 
-Voi pelata Texas Hold'em peliä tietokonetta vastaan. 
-Pelissä voisi olla jotain valuuttaa ns. tekorahaa, jonka kanssa voisi panostaa eri kierroksilla niin kuin oikeassa pokerissa.
+Pelin alussa sovellukseen syötetään nimet, jokaista pelaajaa kohden yksi. Sen jälkeen, kun kone on arponut vuorot niin peli alkaa.
+Pelin tarkoitus on se, että näytölle ilmestyy kolme korttia kuvapuoli alaspäin eli niin että arvaaja ei näe niitä. Sen jälkeen ajastin lähtee käyntiin ja ensimmäisen pelaajan vuoro alkaa. Vuoron aikana pelaajan pitää arvata ensimmäisen kortin arvo, toisen maa ja kolmannesta onko se suurempi vai pienempi kuin toinen korteista. 
+Arvaaja voisi vaikka kirjoittaa vastauksensa korttien alle. Jos arvaaja oli oikeassa hänen ei tarvitse juoda, mutta jos hän on väärässä hänen pitää juoda rangaistus.
 
 Käyttäjät:
-Sovellukseen luodaan käyttäjätunnus. 
-Sovelluksessa voisi olla jonkinlainen "ranking" systeemi, eli kun on pelannut peliä niin se miten hyvin on pärjännyt kirjataan ylös.
+Sovellukselle ilmoitetaan ketkä pelaa
+Sovelluksessa voisi olla jonkinlainen "ranking", eli kun peli on ohi niin siinä voisi nähdä kuka arvasi parhaiten.
 
 Pelin toimintaan tarvittavat asiat:
 
--Tietokone, joka osaa pelata ja panostaa.
+-Koodi, joka generoi satunnaisia korttipakkoja
 
--Tietokanta, joka pitää kirjaa käyttäjätunnuksista.
+-Tietokanta, joka pitää kirjaa pelaajien menestyksestä.
 
--Pelikortit, mitä voi siirrellä näytöllä.
+-Pelikortit
 
--Valuutta, jonka kanssa pelissä panostetaan.
+-Ajastin, joka pitää aikaa kuinka pitkiä vuorot ovat.
+
+-Jokin koodi, joka osaa poistaa jo kierroksella käytetyt kortit niin että pakka loppuu
 
 Perusversio:
-Peli jossa voi pelata tietokonetta vastaan (ilman panostamista).
+Peli, jonka kuvailin "tarkoitus" osiossa.
 
 Jatkokehitysideat:
 
--Ranking
+-Ajastin, joka nopeuttaa vuoroja (pienentää arvaamisaikaa)
 
--Panostaminen
+-Panostaminen?
 
--co-op (voi pelata muita käyttäjiä vastaan)
+-Taustamusiikki
+
+-Jotain erityiskierroksia
 
