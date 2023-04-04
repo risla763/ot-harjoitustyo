@@ -42,7 +42,7 @@ class Deck: #korttipakka
         ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace']
         for suit in suits: #värit
             for rank in ranks: #arvot
-                card = Card(suit, rank, self.cards) #yksittäinen kortti (TUPLE) tässä hypätään ylempään luokkaan
+                card = Card(suit, rank, self.cards) #yksittäinen kortti (TUPLE)
                 self.cards.append(card) #tuple lista korteista
         random.shuffle(self.cards) #sekoitetaan pakkaa
 
@@ -93,21 +93,21 @@ card = deck.deal()
 pygame.display.update()
 
 # Game loop
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
+#while True:
+#    for event in pygame.event.get():
+#        if event.type == pygame.QUIT:
+#            pygame.quit()
+#            exit()
 
         
-    rectangle = pygame.Rect(0,0,50,50)
-    pygame.draw.rect(screen, color, rectangle)
+#    rectangle = pygame.Rect(0,0,50,50)
+#    pygame.draw.rect(screen, color, rectangle)
     #screen.fill(color)
-    elapsed_time = int(time.time() - start_time)
+ #   elapsed_time = int(time.time() - start_time)
 
 
     # Render the timer display
-    timer_display = font.render(f"Time: {elapsed_time}", True, (255, 255, 255))
-    screen.blit(timer_display, (10, 10))
+#    timer_display = font.render(f"Time: {elapsed_time}", True, (255, 255, 255))
+#    screen.blit(timer_display, (10, 10))
 
-    pygame.display.update()
+#    pygame.display.update()
