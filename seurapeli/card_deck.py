@@ -4,7 +4,7 @@ import os
 from PIL import Image
 import time
 import sys
-
+from korttipakka import Card
 
 
 
@@ -118,13 +118,13 @@ class Deck: #korttipakka
             self.num  = "14"
         final_num += int(self.num)
         font = pygame.font.SysFont(None, 77) 
-        num_surface = font.render(str(final_num),True,(0,0,0))
+        num_surface = font.render(str(final_num),True,(40,40,40))
         self.fin = final_num
-        input_rect2 = pygame.Rect(1000,890,493,60)
+        input_rect2 = pygame.Rect(100,890,40,60)
         input_rect2_surface = screen.subsurface(input_rect2) #estää numeroiden menemisen toistensa pälle
-        input_rect2_surface.fill((255, 255, 255)) #estää numeroiden päällekkäisyyden
+        input_rect2_surface.fill((0, 0, 0)) #estää numeroiden päällekkäisyyden
         screen.blit(num_surface,input_rect2) #tällä pitäisi saada teksti näytölle
-        pygame.draw.rect(screen,(0,0,0),input_rect2,2)
+        pygame.draw.rect(screen,(3,0,0),input_rect2,2)
         pygame.display.flip() 
         print(self.num)
 
