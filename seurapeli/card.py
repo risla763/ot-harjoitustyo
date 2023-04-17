@@ -3,12 +3,9 @@ import random
 import os
 from PIL import Image
 import time
+#from main import Main
+from pygame.locals import *
 import sys
-#from korttipakka import Card
-
-
-
-
 
 class Card:
     def __init__(self, suit, rank, cards): #yksittäinen kortti
@@ -31,6 +28,7 @@ class Card:
             #yhdistä kuva tupleen:
             #file = os.path.join(png_directory, f"{rank}_of_{suit}.png")
             #self.image = pygame.image.load(file)
+        #print(self.rank)
     def get_rank(self):
         return self.rank
 
@@ -45,7 +43,3 @@ class Card:
         surface.blit(self.image, self.rect) 
         
         #print(self.rank)
-
-
-
-
