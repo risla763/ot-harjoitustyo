@@ -1,8 +1,8 @@
+import time
 import pygame
 import random
 import os
 from PIL import Image
-import time
 #from main import Main
 from pygame.locals import *
 from input import GraphicGuess
@@ -84,7 +84,7 @@ class Main:
         input_rect = pygame.Rect(100,890,493,60)
         try_again_rect = pygame.Rect(1000,890,493,60)
         
-        new_try_count = 0
+
 
         while True:
             for event in pygame.event.get():
