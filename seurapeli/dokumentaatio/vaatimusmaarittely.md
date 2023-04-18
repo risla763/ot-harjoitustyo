@@ -1,24 +1,24 @@
 Sovellusidea:
-Juomapeli (F the dealer) tai ainakin jokin versio siitä 
+Blackjack 
 
 Tarkoitus: 
-Pelin alussa sovellukseen syötetään nimet, jokaista pelaajaa kohden yksi. Sen jälkeen, kun kone on arponut vuorot niin peli alkaa.
-Pelin tarkoitus on se, että näytölle ilmestyy kolme korttia kuvapuoli alaspäin eli niin että arvaaja ei näe niitä. Sen jälkeen ajastin lähtee käyntiin ja ensimmäisen pelaajan vuoro alkaa. Vuoron aikana pelaajan pitää arvata ensimmäisen kortin arvo, toisen maa ja kolmannesta onko se suurempi vai pienempi kuin toinen korteista. 
-Arvaaja voisi vaikka kirjoittaa vastauksensa korttien alle. Jos arvaaja oli oikeassa hänen ei tarvitse juoda, mutta jos hän on väärässä hänen pitää juoda rangaistus.
+Tarkoitus on pelata blackjackia jakajaa vastaan.Pelissä on kierroksia joiden aikana pelaaja yrittää päästä mahdollisimman lähelle numeroa 21 nostamalla kortteja.
+Pelaaja voi lopettaa korttien nostamisen, kun hänestä tuntuu, että on lähempänä lukua 21 kun jakaja tai ajattelee, että seuraavalla kortilla menee siitä yli. Kun pelaaja lopettaa korttien nostamisen niin jakajan kortti ja korttien summa paljastetaan ja ohjelma laskee kumpi voittaa kierroksen. Perus blackjackin säännöt. 
 
 Käyttäjät:
-Sovellukselle ilmoitetaan ketkä pelaa
-Sovelluksessa voisi olla jonkinlainen "ranking", eli kun peli on ohi niin siinä voisi nähdä kuka arvasi parhaiten.
+Jos on aikaa voisi tehdä jonkin kirjautumisjärjestelmän
 
 Pelin toimintaan tarvittavat asiat:
 
 -Koodi, joka generoi satunnaisia korttipakkoja
 
--Tietokanta, joka pitää kirjaa pelaajien menestyksestä.
+-laskuri, joka laskee pelaajan korttien summan
+
+-laskuri, joka laskee jakajan korttien summan
+
+-laskuri, joka pitää kirjaa siitä kumpi on voittanut enemmän kierroksia
 
 -Pelikortit
-
--Ajastin, joka pitää aikaa kuinka pitkiä vuorot ovat.
 
 -Jokin koodi, joka osaa poistaa jo kierroksella käytetyt kortit niin että pakka loppuu
 
@@ -27,7 +27,7 @@ Peli, jonka kuvailin "tarkoitus" osiossa.
 
 Jatkokehitysideat:
 
--Ajastin, joka nopeuttaa vuoroja (pienentää arvaamisaikaa)
+-Scoreboard
 
 -Panostaminen?
 
