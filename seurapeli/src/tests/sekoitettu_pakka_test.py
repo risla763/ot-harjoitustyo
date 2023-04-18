@@ -1,6 +1,6 @@
 import unittest
-from korttipakka import Card
-from korttipakka import Deck
+from card_deck import Card
+from deck_of_cards import Deck
 import random
 
 
