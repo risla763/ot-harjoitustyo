@@ -1,7 +1,7 @@
-import time
-import pygame
 import random
+import time
 import os
+import pygame
 from PIL import Image
 #from main import Main
 from pygame.locals import *
@@ -16,15 +16,13 @@ from changes_card_deck import Deck
 
 class Main:
     def __init__(self):
-
-        print("HALOO")
      # Initialize Pygame
         pygame.init()
 
 # Set up the display
-        screen_width = 1800
-        screen_height = 1000
-        screen = pygame.display.set_mode((screen_width, screen_height))
+        SCREEN_WIDTH = 1800
+        SCREEN_HEIGHT = 1000
+        screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption("blackjack harjoitin")
         color2 = (0,181,20) #äglön vihreä
         color = (0, 139, 0)
@@ -35,7 +33,7 @@ class Main:
         font = pygame.font.SysFont(None, 77) #FONTTI ja fontin koko
         user_text = '' #käyttäjän inputtaama teksti
         #kello
-        start_time = time.time()
+        #start_time = time.time()
         #text_21 = font
     
 

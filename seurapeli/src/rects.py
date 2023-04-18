@@ -1,20 +1,14 @@
 import pygame
-import random
-import os
-from PIL import Image
-import time
-import sys
-
-
 
 
 class GraphicGuess:
     def __init__(self):
+        # pylint: disable=E1101
         pygame.init()
 
-
-    def draw_rect(self, screen):
-# # set the rectangle dimensions
+    @staticmethod
+    def draw_rect(screen):
+        # # set the rectangle dimensions
         rect_width = 493
         rect_height = 60
 
@@ -29,14 +23,13 @@ class GraphicGuess:
     #   teksti
 
 
-
 # draw the rectangle
         rect = pygame.Rect(rect_x, rect_y, rect_width, rect_height)
         pygame.draw.rect(screen, (119, 5, 0), rect)
         pygame.display.flip()
-
-    def draw_rect2(self, screen):
-# # set the rectangle dimensions
+    @staticmethod
+    def draw_rect2(screen):
+        # # set the rectangle dimensions
         rect_width = 493
         rect_height = 60
 
@@ -52,10 +45,9 @@ class GraphicGuess:
         rect = pygame.Rect(rect_x, rect_y, rect_width, rect_height)
         pygame.draw.rect(screen, (119, 5, 0), rect)
         pygame.display.flip()
-
-
-    def draw_rect3(self, screen):
-# # set the rectangle dimensions
+    @staticmethod
+    def draw_rect3(screen):
+        # # set the rectangle dimensions
         rect_width = 493
         rect_height = 60
 
@@ -71,11 +63,7 @@ class GraphicGuess:
         rect = pygame.Rect(rect_x, rect_y, rect_width, rect_height)
         pygame.draw.rect(screen, (119, 5, 0), rect)
         pygame.display.flip()
-    
 
-
-    def text1(self):
-        font= pygame.font.SysFont("Arial", 24)
-        text = input("")
-    
-    
+    #def text1(self):
+        #font = pygame.font.SysFont("Arial", 24)
+        #text = input("")
