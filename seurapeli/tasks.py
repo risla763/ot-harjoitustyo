@@ -3,7 +3,7 @@ from invoke import task
 
 @task
 def start(ctx):
-    ctx.run("python3 korttipakka.py", pty=True)
+    ctx.run("python3 main_game_loop.py", pty=True)
 
 
 @task
