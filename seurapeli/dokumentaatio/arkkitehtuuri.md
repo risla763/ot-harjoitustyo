@@ -1,1 +1,1 @@
-![IMG_20230418_230849.jpg](Downloads/IMG_20230418_230849.jpg)
+https://github.com/maijarislakki/ot-harjoitustyo/blob/master/seurapeli/dokumentaatio/IMG_20230418_230849.jpg
