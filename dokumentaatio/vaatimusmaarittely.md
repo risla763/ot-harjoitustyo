@@ -1,32 +1,30 @@
 Sovellusidea:
-Yksinkertainen Texas Hold'em
+Yksinkertainen Blackjack
 
 Tarkoitus: 
-Voi pelata Texas Hold'em peliä tietokonetta vastaan. 
-Pelissä voisi olla jotain valuuttaa ns. tekorahaa, jonka kanssa voisi panostaa eri kierroksilla niin kuin oikeassa pokerissa.
+korttipeli, jossa tavoitteena on saada kahdella tai useammalla kortilla pelikäsi, jolla voittaa jakajan käden joko siten, että pelaajan käden pistemäärä on lähempänä kahtakymmentäyhtä kuin jakajan, tai siten, että jakajan käden pistemäärä menee yli kahdenkymmenenyhden.
 
 Käyttäjät:
-Sovellukseen luodaan käyttäjätunnus. 
-Sovelluksessa voisi olla jonkinlainen "ranking" systeemi, eli kun on pelannut peliä niin se miten hyvin on pärjännyt kirjataan ylös.
+Ei kirjautumisjärjestelmää. Simppelisti pelaaja pelaa jakajaa vastaan ja jakaja on tietokone.
 
 Pelin toimintaan tarvittavat asiat:
 
--Tietokone, joka osaa pelata ja panostaa.
+-Kortin kuvat PNG tiedostoina.
 
--Tietokanta, joka pitää kirjaa käyttäjätunnuksista.
+-Koodi, joka osaa sekoittaa kortit.
 
--Pelikortit, mitä voi siirrellä näytöllä.
+-Koodi, joka osaa laskea korttien summan ja voittajan.
 
--Valuutta, jonka kanssa pelissä panostetaan.
+-Koodi, joka osaa laskea kuinka monta kierrosta jakaja ja pelaaja ovat voittaneet. (tämä vielä kesken, koska se vahingossa päivittyy joka kerta kun aloittaa alusta).
 
 Perusversio:
-Peli jossa voi pelata tietokonetta vastaan (ilman panostamista).
+Peli jossa voi pelata tietokonetta vastaan blackjack peliä. Peliä voisi vaikeuttaa niin vielä, että jakaja nostaa yhden kortin,jos se on kannattavaa sille, kun pelaaja haluaa lopettaa pelin.
 
 Jatkokehitysideat:
 
--Ranking
+-Ranking ja käyttäjätunnukset.
 
 -Panostaminen
 
--co-op (voi pelata muita käyttäjiä vastaan)
+-Taustamusiikki
 
