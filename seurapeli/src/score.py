@@ -31,9 +31,9 @@ class Score:
 
 
 
-        self.player_rect(self.player, (255, 255, 255), (0, 0, 0), (255, 255, 255),(1050, 15, 50, 50),self.screen)
+        self.player_rect(self.player, (255, 255, 255), (0, 0, 0), (255, 255, 255),(1070, 15, 50, 50),self.screen)
         #tähän viiva
-        self.dealer_rect(self.dealer, (255, 255, 255), (0, 0, 0), (255, 255, 255),(1100,15,50,50),self.screen)
+        self.dealer_rect(self.dealer, (255, 255, 255), (0, 0, 0), (255, 255, 255),(1120,15,50,50),self.screen)
 
 
 
