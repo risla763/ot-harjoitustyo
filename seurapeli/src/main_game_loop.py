@@ -9,6 +9,8 @@ from score import Score
 class Main:
     def __init__(self):
         pygame.init()
+        #Score().which_is_it((fin, fin2, screen)
+        #tähän score
         self.enable = True
         # pylint: disable=invalid-name
         self.screen_width = 1800
@@ -68,7 +70,6 @@ class Main:
                         count = 2
                         self.enable = False
                         Main()
-                        Score(self.screen).which_is_it(self.fin, self.fin2, self.screen)
                     if self.end_round_rect.collidepoint(event.pos):
                         #print("moi")
                         deck.see_cards(self.screen)

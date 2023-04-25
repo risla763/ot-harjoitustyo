@@ -10,10 +10,10 @@ class TestCardDeck(unittest.TestCase):
 
     def test_size(self):
         deck = Deck()
-        self.assertEqual(len(deck.cards), 52)
+        self.assertEqual(len(deck.self.cards), 52)
 
     def test_mix(self):
-        deck1 = Deck()
-        deck2 = Deck()
+        deck1 = Deck().self.cards
+        deck2 = Deck().self.cards()
         random.shuffle(deck2.cards)
-        self.assertNotEqual(deck1.cards, deck2.cards)
+        self.assertNotEqual(deck2, deck1)
