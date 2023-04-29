@@ -1,4 +1,4 @@
-from draw_rect import Rect
+from ui.draw_rect import Rect
 import pygame.font
 import pygame
 

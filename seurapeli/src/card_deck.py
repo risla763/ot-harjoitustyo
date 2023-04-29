@@ -17,6 +17,4 @@ class Card:
         return self.rank
     def get_suit(self):
         return self.suit
-    def draw(self, surface, pos): #surface on näyttö , jolle kortti vedetään
-        self.rect.topleft = pos #tuple
-        surface.blit(self.image, self.rect)
+

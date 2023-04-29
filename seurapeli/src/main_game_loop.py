@@ -1,16 +1,16 @@
 import sys
 import os
 import pygame
-from rects import GraphicGuess
+from ui.rects import GraphicGuess
 from deck_of_cards import Deck
-from draw_rect import Rect
+from ui.draw_rect import Rect
 from flip_side import Flip
 from score import Score
+from ui.draw_deck import draw_deck
+from ui.next_cards import draw_next
 class Main:
     def __init__(self):
         pygame.init()
-        #Score().which_is_it((fin, fin2, screen)
-        #tähän score
         self.enable = True
         # pylint: disable=invalid-name
         self.screen_width = 1800
@@ -23,16 +23,14 @@ class Main:
         pygame.display.flip()
         #teksti
         self.font = pygame.font.SysFont('didot.ttc', 72) #FONTTI ja fontin koko
-        #kello
         deck = Deck()
-        deck.draw(self.screen)
-        #graphic.draw_rect(self.screen)
+        #deck.draw(self.screen)
+        draw_deck(self,self.screen,deck)
         self.dealer_x = 100
         count = 2
         self.count_dealer = 0
         card = deck.deal()
-        card.draw(self.screen, (100, 100))
-        #Flip().draw(self.screen, (55,60))
+        draw_next(self.screen, (100, 100),card)
         self.first_rank = card.get_rank()
         #deck.count(self.screen,count,Deck().next_card)
         deck.next_card_dealer(self.screen,(1000,100),self.count_dealer) #JAKAJAN EKA
@@ -60,11 +58,13 @@ class Main:
                             self.count_dealer += 1
                             if count == 3:
                                 deck.next_card_dealer(self.screen,card_positions2,self.count_dealer)
-                                deck.next_card(self.screen,card_positions)
+                                next_card = deck.next_card()
+                                draw_next(self.screen,card_positions,next_card)
                                 deck.count(self.screen,count, self.first_rank,self.enable)
                                 deck.count2(self.screen,count,self.dealer_first_rank)
                             else:
-                                deck.next_card(self.screen,card_positions)
+                                next_card = deck.next_card()
+                                draw_next(self.screen,card_positions,next_card)
                                 deck.count(self.screen,count, self.first_rank,self.enable)
                     if self.try_again_rect.collidepoint(event.pos):
                         count = 2
