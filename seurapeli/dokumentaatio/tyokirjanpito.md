@@ -7,6 +7,14 @@ Tiistaina käytetty noin 3- 4 tuntia (taukojen kera) projektin tekemiseen.
 -(16.4) "lopetetaanko peli" painike 4h
 -(17.4) aloitin tekemään laskuria, joka pitää kirjaa kierroksien voitoista ja siivosin koodia 4h.
 -(18.4) siivosin koodia
-Yhteensä:22h
+##Viikko 5
+24.4 
+25.4
+8h 
+"katsotaanko kortit" painike
+##Viikko 6
+2.5
+6h
 
+Yhteensä: 34h
  

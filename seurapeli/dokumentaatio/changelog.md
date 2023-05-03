@@ -20,3 +20,13 @@
 -Jakajan koritit näkyvät näytöllä (lopullisessa versiossa toinen korteista on kierroksen aikana piilossa)
 -Painamalla tekstiä "Aloitetaanko alusta" alkaa uusi pelikierros
 -Ruudun oikeassa kulmassa on aloitettu pienesti laskuria, jonka tarkoitus olisi pitää kirjaa voitetuista ja hävityistä kierroksista (hyvin kesken)
+
+##Viikko 5
+
+-Tein painikkeen, jota painamalla kierros päättyy. Painikkeessa lukee "Katsotaanko kortit?"
+-Siivosin koodia
+
+##Viikko 6
+
+-Siirsin koodin, joka "piirtää" jotain ruudulle sille omaan kansioon nimeltä UI.
+-Siivosin koodia.
