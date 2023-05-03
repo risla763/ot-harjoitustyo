@@ -3,7 +3,11 @@ Blackjack
 
 Tarkoitus: 
 Tarkoitus on pelata blackjackia jakajaa vastaan.Pelissä on kierroksia joiden aikana pelaaja yrittää päästä mahdollisimman lähelle numeroa 21 nostamalla kortteja.
-Pelaaja voi lopettaa korttien nostamisen, kun hänestä tuntuu, että on lähempänä lukua 21 kun jakaja tai ajattelee, että seuraavalla kortilla menee siitä yli. Kun pelaaja lopettaa korttien nostamisen niin jakajan kortti ja korttien summa paljastetaan ja ohjelma laskee kumpi voittaa kierroksen. Perus blackjackin säännöt. 
+Pelaaja voi lopettaa korttien nostamisen, kun hänestä tuntuu, että on lähempänä lukua 21 kun jakaja tai ajattelee, että seuraavalla kortilla menee siitä yli.
+ Kun pelaaja lopettaa korttien nostamisen niin jakajan kortti ja korttien summa paljastetaan ja ohjelma laskee kumpi voittaa kierroksen.
+ Perus blackjackin säännöt.
+Peliin voisi vielä lisätä toiminnon, jossa jakaja nostaa yhden kortin, jos se on todennäköisyyksien mukaan kannattavaa, jos pelaaja haluaa katsoa kortit.
+ 
 
 Käyttäjät:
 Jos on aikaa voisi tehdä jonkin kirjautumisjärjestelmän
@@ -33,5 +37,5 @@ Jatkokehitysideat:
 
 -Taustamusiikki
 
--Jotain erityiskierroksia
+
 
