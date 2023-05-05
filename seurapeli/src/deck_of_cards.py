@@ -1,5 +1,4 @@
 import random
-import time
 import os
 import pygame
 from card_deck import Card
@@ -9,7 +8,12 @@ from ui.next_cards import draw_next
 
 
 class Deck:
+    """This class shuffles the card deck and
+    has some logic in it how the counting and rounds work."""
     def __init__(self):
+        """This is the constructor of the
+        class and it has lists of colors and values of the cards.
+        It also shuffles and makes the deck."""
         self.cards = []
         suits = ['spades', 'hearts', 'diamonds', 'clubs']
         ranks = ['2', '3', '4', '5', '6', '7', '8',
@@ -24,25 +28,37 @@ class Deck:
         self.first_rank = 0
         self.font = pygame.font.SysFont(None, 77)  # muokaa tätä draw_rect
         self.screen = 0
+        self.num_surface = 0
+        self.input_rect = pygame.Rect(1390, 45, 70, 50)
+        self.suit_imp = card.get_suit()
+        png_directory = "PNG-cards-1.3"
+        self.important_card = os.path.join(
+            png_directory, f"{self.num2}_of_{self.suit_imp}.png")
+        #self.important_image = pygame.image.load(self.important_card)
+        self.input_rect_surface = 0
 
     def deal(self):
+        """This method removes a card from the deck and returns it."""
         # poistaa ja palauttaa?
         return self.cards.pop()
 
     def next_card(self):
+        """This method removes and returns a card from the deck too...
+        also in this method card gets a variable where is its rank
+        """
         card = self.cards.pop()
         self.num = card.get_rank()
         return card
 
     def next_card_dealer(self, screen, card_positions2, count_dealer):
+        """This method deals the dealer a card.
+        If the count_dealer is 0 (round starts) then that card will be face down."""
         #every_card = len(self.cards)
-
         card = self.cards.pop()
         if count_dealer == 0:
             draw_next(screen, card_positions2,card)
             Flip(screen).draw(screen, (950, 60))
             self.num2 = card.get_rank()
-            self.suit_imp = card.get_suit()
             png_directory = "PNG-cards-1.3"
             self.important_card = os.path.join(
                 png_directory, f"{self.num2}_of_{self.suit_imp}.png")
@@ -55,6 +71,7 @@ class Deck:
         return self.num2
 
     def count2(self, screen, count, dealer_first_rank):
+        """This method keeps track of the sum of the values of the dealer's cards."""
         if count <= 2:
             self.num2 = 0
             if dealer_first_rank == "king":
@@ -82,12 +99,12 @@ class Deck:
         font = pygame.font.SysFont(None, 77)
         self.num_surface = font.render(str(final_num2), True, (50, 40, 30))
         self.fin2 = final_num2
-        self.input_rect = pygame.Rect(1390, 45, 70, 50)
         # estää numeroiden menemisen toistensa pälle
         self.input_rect_surface = screen.subsurface(self.input_rect)
         self.screen = screen
 
     def count(self, screen, count, first_rank, enable):
+        """This methdon keeps track of the sum of the player's card values."""
         if count <= 2:
             if first_rank == "king":
                 final_num = int(13)
@@ -127,24 +144,25 @@ class Deck:
         # print(self.fin)
         if self.fin >= 22:
             self.first_rank = 0
-            Deck.round_ends(self, screen, enable)
-            Score(screen).which_is_it(self.fin, self.fin2, self.screen)
+            Deck.round_ends(self, screen)
+            Score(screen).which_is_it(self.fin, self.fin2)
 
     def see_cards(self, screen):
-        Score(screen).which_is_it(self.fin, self.fin2, self.screen)
-        # game_over_surface = self.font.render(
-        # str("Game over"), True, (255, 255, 255))
-        #input_rect3 = pygame.Rect(800, 45, 70, 50)
+        """This method takes to a different class and method
+        where it is calculated who has won the round."""
+        Score(screen).which_is_it(self.fin, self.fin2)
+        #tässä on vielä piirtämistä, jonka tulen siirtämään eri tiedostoon
         # tällä pitäisi saada teksti näytölle
         self.input_rect_surface.fill((255, 255, 255))  # valkoinen
         #screen.blit(game_over_surface, input_rect3)
-        # screen.blit(self.important_image,(950,100)) #tämä jostain syystä on eri kuin kortti alla (looppia missä tämä määritellään kutsutaan kaksi kertaa)
+        # screen.blit(self.important_image,(950,100))
         screen.blit(self.num_surface, self.input_rect)
         pygame.draw.rect(screen, (0, 0, 0), self.input_rect, 2)  # (0,0,0)
         pygame.display.flip()
         # ei pysty enää nostaa uutta korttia
 
-    def round_ends(self, screen, enable):  # GAME OVER
+    def round_ends(self, screen):  #Tämän tulen siirtämään ui kansioon
+        """This methdon draws "game over" on the screen"""
         self.enable = False
         # näytölle ilmestyy game over ja start again
         #self.font = pygame.font.SysFont(None, 77)

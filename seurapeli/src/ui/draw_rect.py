@@ -4,6 +4,7 @@ class Rect:
     #@staticmethod
 
     def make_changing_rect(self,text, text_color, surface_color, frames_color,rect_position, screen):
+        """This method draws a text box."""
         font = pygame.font.SysFont(None, 50)
         surface = font.render(str(text), True, text_color)
 
@@ -16,7 +17,10 @@ class Rect:
                          2)
         pygame.display.flip()
 
+        return rect
+
     def make_changing_rect2(self,text, text_color, surface_color, frames_color,rect_position,screen):
+            """This method draws a text box."""
             font = pygame.font.SysFont(None, 50)
             surface = font.render(str(text), True, text_color)
 
@@ -28,3 +32,5 @@ class Rect:
             pygame.draw.rect(screen, frames_color, rect,
                             2)
             pygame.display.flip()
+
+            return rect

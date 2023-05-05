@@ -1,15 +1,15 @@
 import sys
-import os
 import pygame
-from ui.rects import GraphicGuess
 from deck_of_cards import Deck
 from ui.draw_rect import Rect
-from flip_side import Flip
-from score import Score
 from ui.draw_deck import draw_deck
 from ui.next_cards import draw_next
 class Main:
+    """This class defines the game screen values and other 
+    values used in the game like point counters values. 
+    This class also calls other classes in the game"""
     def __init__(self):
+        """Class constructor that creates a new game"""
         pygame.init()
         self.enable = True
         # pylint: disable=invalid-name
@@ -40,11 +40,17 @@ class Main:
         deck.count2(self.screen,count,self.dealer_first_rank)
         pygame.display.update()
         self.input_rect = pygame.Rect(100,890,493,60)
-        self.try_again = Rect().make_changing_rect("Aloitetaanko alusta?", (100,149,237), (119, 5, 0), (255, 255, 255),(1200, 890, 400, 50),self.screen)
+        self.try_again = Rect().make_changing_rect("Aloitetaanko alusta?",
+                                                   (100,149,237), (119, 5, 0), (255, 255, 255),
+                                                   (1200, 890, 400, 50),self.screen)
         self.try_again_rect = pygame.Rect(1200,890,400,50)
-        self.game_continues = Rect().make_changing_rect("Jatketaanko peliä?",(100,149,237),(119,5,0),(255,255,255),(100,890,330,50),self.screen)
+        self.game_continues = Rect().make_changing_rect("Jatketaanko peliä?",
+                                                        (100,149,237),(119,5,0),
+                                                        (255,255,255),(100,890,330,50),self.screen)
         self.end_round_rect = pygame.Rect(650,890,322,50)
-        self.end_round = Rect().make_changing_rect("Katsotaanko kortit?", (100,149,237), (119, 5, 0), (255, 255, 255),(650, 890, 332, 50),self.screen)
+        self.end_round = Rect().make_changing_rect("Katsotaanko kortit?",
+                                                   (100,149,237), (119, 5, 0),
+                                                   (255, 255, 255),(650, 890, 332, 50),self.screen)
         deck.count(self.screen,count, self.first_rank,self.enable)
         self.count_dealer += 1
         while True:
@@ -74,7 +80,6 @@ class Main:
                         #print("moi")
                         deck.see_cards(self.screen)
                         self.enable = False
-            
                 x = count*100
                 y = 100
                 self.dealer_x = count*100+900

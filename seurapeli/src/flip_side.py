@@ -1,9 +1,11 @@
 import os
 import pygame
-from card_deck import Card
 
 class Flip:
+    """This class draws the back of the cards."""
     def __init__(self, screen):
+        """This is the constructor of the class and it retrieves a png file with the image
+        of the back side of a card"""
         self.screen = screen
         png_directory = "PNG-cards-1.3"
         file2 = os.path.join(png_directory,"10_of_hearts.png")
@@ -13,16 +15,16 @@ class Flip:
         self.rect = self.image2.get_rect()
         self.scaling()
         self.image_width_scaling()
-        
     def scaling(self):
+        """This method retrieves the height of the image """
         self.image_height = self.image3.get_height()
-        
     def image_width_scaling(self):
+        """This method retrieves the width of the image"""
         self.image_width = self.image3.get_width()
-        
     def draw(self, surface, pos):
-        new_size = (700, 700)
-        scaled_image2 = pygame.transform.scale(self.image2, (self.image_width+90,self.image_height+90))
+        """This method draws the back side of a card on the screen""" #siirrä ui
+        scaled_image2 = pygame.transform.scale(self.image2,
+                                                (self.image_width+90,self.image_height+90))
         self.rect.topleft = pos
         print(type(surface))
         surface.blit(scaled_image2, self.rect)
