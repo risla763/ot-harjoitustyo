@@ -1,4 +1,4 @@
-### Käyttöohje
+# Käyttöohje
 
 ## Ohjelman käynnistäminen
 Ennen pelin käynnistämistä,asenna riippuvuudet komennolla:
