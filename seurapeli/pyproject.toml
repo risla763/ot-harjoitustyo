@@ -8,6 +8,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.8"
 invoke = "^2.0.0"
+python-dotenv = "^1.0.0"
+pygame = "^2.4.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -19,3 +21,7 @@ autopep8 = "^2.0.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.invoke.tasks.start]
+cmd = "python3 /home/mairisla/ot-harjoitustyo/seurapeli/src/main_game_loop.py"

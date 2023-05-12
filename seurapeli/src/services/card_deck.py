@@ -1,5 +1,6 @@
 import os
 import pygame
+# from dotenv import load_dotenv
 
 """This class makes a png image its own variable."""
 class Card:
@@ -7,7 +8,7 @@ class Card:
         self.suit = suit #väri
         self.rank = rank #arvo
         self.cards = cards
-        png_directory = "PNG-cards-1.3"
+        png_directory = "src/services/entities/PNG-cards-1.3"
         file = os.path.join(png_directory, f"{rank}_of_{suit}.png")
         self.image = pygame.image.load(file)
         self.list_of_ranks = []
