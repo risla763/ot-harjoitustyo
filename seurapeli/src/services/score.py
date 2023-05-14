@@ -1,6 +1,7 @@
 import pygame.font
 import pygame
 from services.ui.draw_rect import Rect
+from services.ui.score_ui import draw_score
 
 class Score:
     """This class keeps track of who has won more rounds, the dealer or the player
@@ -28,26 +29,16 @@ class Score:
         if abs(fin-21) < abs(fin2-21):
             if fin > 21 > fin2:
                 self.dealer += 1
-
+                draw_score(self,self.player,self.dealer)
             else:
                 self.player += 1
-
-
+                draw_score(self,self.player,self.dealer)
         elif abs(fin2-21) < abs(fin-21):
             if fin2 > 21 > fin:
                 self.player += 1
-
+                draw_score(self,self.player,self.dealer)
             else:
                 self.dealer += 1
-
-        #elif fin2 == fin:
-           
-
-        self.player_rect(self.player,
-                         (255, 255, 255), (0, 0, 0), (255, 255, 255),(1050, 15, 50, 50),self.screen)
-        #tähän viiva
-        self.dealer_rect(self.dealer,
-                         (255, 255, 255), (0, 0, 0), (255, 255, 255),(1100,15,50,50),self.screen)
-        
+                draw_score(self,self.player,self.dealer)
         return self.player,self.dealer
         

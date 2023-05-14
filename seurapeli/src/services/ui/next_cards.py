@@ -1,4 +1,5 @@
 from services.card_deck import Card
+import pygame
 def draw_next(surface, pos,card): #surface on näyttö , jolle kortti vedetään
         """This method draws the next card from the deck.
         Args:

@@ -39,16 +39,23 @@ class Deck:
         #self.important_image = pygame.image.load(self.important_card)
         self.input_rect_surface = 0
         self.score = Score(self.screen)
+        #self.important_image = pygame.image.load(self.important_card)
 
     def deal(self):
         """This method removes a card from the deck and returns it."""
         # poistaa ja palauttaa?
+
+        #print(self.cards)
+        if len(self.cards) == 0:
+            self.__init__()
         return self.cards.pop()
 
     def next_card(self):
         """This method removes and returns a card from the deck too...
         also in this method card gets a variable where is its rank
         """
+        if len(self.cards) == 0:
+            self.__init__()
         card = self.cards.pop()
         self.num = card.get_rank()
         return card
@@ -63,6 +70,8 @@ class Deck:
         Returns: the value of the card dealt
             """
         #every_card = len(self.cards)
+        if len(self.cards) == 0:
+            self.__init__()
         card = self.cards.pop()
         if count_dealer == 0:
             draw_next(screen, card_positions2,card)
@@ -115,6 +124,10 @@ class Deck:
         # estää numeroiden menemisen toistensa pälle
         self.input_rect_surface = screen.subsurface(self.input_rect)
         self.screen = screen
+
+    def see_if_empty(self):
+        if len(self.cards) == 0:
+            return 
 
     def count(self, screen, count, first_rank):
         """This methdon keeps track of the sum of the player's card values.
@@ -182,7 +195,7 @@ class Deck:
         pygame.display.flip()
         # ei pysty enää nostaa uutta korttia
         return value
-    
+
     def game_over_after_see_cards(self):
         return True
 
