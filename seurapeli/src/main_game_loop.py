@@ -94,7 +94,6 @@ class Main:
                                 next_card = self.deck.next_card()
                                 draw_next(self.screen,card_positions,next_card)
                                 game_over= self.deck.count(self.screen,count, self.first_rank)
-                                print(game_over)
                     if self.try_again_rect.collidepoint(event.pos):
                         count = 2
                         self.enable = False
