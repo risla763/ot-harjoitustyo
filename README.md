@@ -35,3 +35,6 @@ poetry run invoke coverage-report
 
 ## testaus
 poetry run invoke test
+
+## Loppupalautus
+[palautus](https://github.com/risla763/ot-harjoitustyo/releases/tag/loppupalautus)
