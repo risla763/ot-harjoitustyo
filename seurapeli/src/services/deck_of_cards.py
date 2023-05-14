@@ -36,16 +36,12 @@ class Deck:
         png_directory = "PNG-cards-1.3"
         self.important_card = os.path.join(
             png_directory, f"{self.num2}_of_{self.suit_imp}.png")
-        #self.important_image = pygame.image.load(self.important_card)
         self.input_rect_surface = 0
         self.score = Score(self.screen)
-        #self.important_image = pygame.image.load(self.important_card)
 
     def deal(self):
         """This method removes a card from the deck and returns it."""
         # poistaa ja palauttaa?
-
-        #print(self.cards)
         if len(self.cards) == 0:
             self.__init__()
         return self.cards.pop()
@@ -69,7 +65,6 @@ class Deck:
             count_dealer: a counter that keeps a sum of the dealer's card values
         Returns: the value of the card dealt
             """
-        #every_card = len(self.cards)
         if len(self.cards) == 0:
             self.__init__()
         card = self.cards.pop()
@@ -81,7 +76,6 @@ class Deck:
             self.important_card = os.path.join(
                 png_directory, f"{self.num2}_of_{self.suit_imp}.png")
             self.important_image = pygame.image.load(self.important_card)
-            #print(self.important_card)
         else:
             draw_next(screen, card_positions2,card)
         self.num2 = card.get_rank()
@@ -123,11 +117,10 @@ class Deck:
         self.fin2 = final_num2
         # estää numeroiden menemisen toistensa pälle
         self.input_rect_surface = screen.subsurface(self.input_rect)
-        self.screen = screen
 
     def see_if_empty(self):
         if len(self.cards) == 0:
-            return 
+            return
 
     def count(self, screen, count, first_rank):
         """This methdon keeps track of the sum of the player's card values.
@@ -165,14 +158,10 @@ class Deck:
         input_rect2 = pygame.Rect(500, 45, 70, 50)
         # estää numeroiden menemisen toistensa pälle
         input_rect2_surface = screen.subsurface(input_rect2)
-        # estää numeroiden päällekkäisyyden
         input_rect2_surface.fill((255, 255, 255))
-        # tällä pitäisi saada teksti näytölle
         screen.blit(num_surface, input_rect2)
         pygame.draw.rect(screen, (3, 0, 0), input_rect2, 2)
         pygame.display.flip()
-        #print("lollll", self.fin)
-        # print(self.fin)
         if self.fin >= 22:
             self.first_rank = 0
             Deck.round_ends(self, screen)
@@ -185,11 +174,7 @@ class Deck:
         Args:
             screen: displays the pygame screen"""
         value = self.score.which_is_it(self.fin, self.fin2)
-        #tässä on vielä piirtämistä, jonka tulen siirtämään eri tiedostoon
-        # tällä pitäisi saada teksti näytölle
         self.input_rect_surface.fill((255, 255, 255))  # valkoinen
-        #screen.blit(game_over_surface, input_rect3)
-        # screen.blit(self.important_image,(950,100))
         screen.blit(self.num_surface, self.input_rect)
         pygame.draw.rect(screen, (0, 0, 0), self.input_rect, 2)  # (0,0,0)
         pygame.display.flip()
@@ -199,20 +184,17 @@ class Deck:
     def game_over_after_see_cards(self):
         return True
 
-    def round_ends(self, screen):  #Tämän tulen siirtämään ui kansioon
+    def round_ends(self, screen):
         """This methdon draws "game over" on the screen
         Args:
             screen: displays the pygame screen"""
         self.enable = False
         # näytölle ilmestyy game over ja start again
-        #self.font = pygame.font.SysFont(None, 77)
         game_over_surface = self.font.render(
             str("Game over"), True, (255, 255, 255))
         input_rect3 = pygame.Rect(800, 400, 70, 50)
-        # tällä pitäisi saada teksti näytölle
         self.input_rect_surface.fill((255, 255, 255))
         screen.blit(game_over_surface, input_rect3)
-        # screen.blit(self.important_image,(950,100)) #tässä sama tilanne kuin edellisessä
         screen.blit(self.num_surface, self.input_rect)
         pygame.draw.rect(screen, (0, 0, 0), self.input_rect, 2)  # (0,0,0)
         pygame.display.flip()

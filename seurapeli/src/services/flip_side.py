@@ -33,6 +33,5 @@ class Flip:
         scaled_image2 = pygame.transform.scale(self.image2,
                                                 (self.image_width+90,self.image_height+90))
         self.rect.topleft = pos
-        print(type(surface))
         surface.blit(scaled_image2, self.rect)
         

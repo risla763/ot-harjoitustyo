@@ -4,7 +4,6 @@ from services.deck_of_cards import Deck
 from services.ui.draw_rect import Rect
 from services.ui.draw_deck import draw_deck
 from services.ui.next_cards import draw_next
-from services.score import Score
 
 class Main:
     """This class defines the game screen values and other 
@@ -17,36 +16,28 @@ class Main:
         pygame.init()
         self.color = (0, 139, 0)
         self.value = 0,0
-        self.enable = True
         self.screen_width = 1800
         self.screen_height= 1000
         self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
         self.screen.fill(self.color)
         pygame.display.set_caption("blackjack harjoitin")
-        #self.color = (0, 139, 0)
         self.screen.fill(self.color)
         pygame.display.flip()
-        self.font = pygame.font.SysFont('didot.ttc', 72) #FONTTI ja fontin koko
         self.deck = Deck()
-        draw_deck(self,self.screen,self.deck)
-        self.dealer_x = 100
-        self.count_dealer = 0
         self.fin = 0
         self.fin2 = 0
         self.restart(self.screen)
 
     def restart(self,screen):
         """This method starts the round from the beginning."""
-        #Score(screen).which_is_it(self.fin,self.fin2)
         self.deck.fin, self.deck.fin2 = 0, 0
         self.deck.num, self.deck.num2 = 0, 0
         self.deck.first_rank = 0
         self.deck.num_surface = 0
-        print(self.value)
         self.enable = True
         self.screen.fill(self.color)
         pygame.display.flip()
-        self.font = pygame.font.SysFont('didot.ttc', 72) #FONTTI ja fontin koko
+        self.font = pygame.font.SysFont('didot.ttc', 72)
         draw_deck(self,self.screen,self.deck)
         self.dealer_x = 100
         count = 2
@@ -55,7 +46,7 @@ class Main:
         draw_next(self.screen, (100, 100),card)
         self.first_rank = card.get_rank()
         self.see_if_deck_empty()
-        self.deck.next_card_dealer(self.screen,(1000,100),self.count_dealer) #JAKAJAN EKA
+        self.deck.next_card_dealer(self.screen,(1000,100),self.count_dealer)
         self.dealer_first_rank = self.deck.next_card_dealer(self.screen,
                                                             (1000,100),self.count_dealer)
         self.dealer_first_suit = card.get_suit() #
@@ -120,12 +111,12 @@ class Main:
                 bconst = 100
                 card_positions = (xcoord,ycoord)
                 card_positions2 = (self.dealer_x,bconst)
-                pygame.display.flip() #tärkeä ja päivittää yhtä pientä
+                pygame.display.flip()
                 pygame.display.update()
         
     def see_if_deck_empty(self):
-        print("MOIIIII")
+        """This should fix the bug that the screen turns black
+         during the first round when the deck starts over. """
         if self.deck.see_if_empty() == True:
-            #self.screen.fill(self.color)
             Main()
 main = Main()

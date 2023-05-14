@@ -1,6 +1,5 @@
 import os
 import pygame
-# from dotenv import load_dotenv
 
 """This class makes a png image its own variable."""
 class Card:
@@ -13,7 +12,6 @@ class Card:
         self.image = pygame.image.load(file)
         self.list_of_ranks = []
         self.list_of_ranks.append(rank)
-        #print(self.list_of_ranks)
         self.rect = self.image.get_rect()
     def get_rank(self):
         """This method returns the rank of the card
