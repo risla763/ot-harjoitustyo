@@ -15,6 +15,8 @@ Blackjack on korttipeli, jossa tavoitteena on saada pelikäsi, jolla voittaa jak
 
 [Arkkitehtuuri](https://github.com/maijarislakki/ot-harjoitustyo/blob/master/seurapeli/dokumentaatio/arkkitehtuuri.md)
 
+[Käyttöohje](https://github.com/risla763/ot-harjoitustyo/blob/master/seurapeli/dokumentaatio/kayttoohje.md)
+
 
 ## Asennus
 1. Asenna tarvittavat riippuvuudet:
