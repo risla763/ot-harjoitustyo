@@ -31,6 +31,8 @@ Peli, jonka kuvailin "tarkoitus" osiossa.
 
 Jatkokehitysideat:
 
+-jakaja voisi nostaa kortin, jos se on kannattavaa silloin kun pelaaja painaa "Katsotaanko kortit?" näppäintä.
+
 -Scoreboard
 
 -Panostaminen?

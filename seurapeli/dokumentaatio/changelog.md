@@ -1,8 +1,8 @@
-##Viikko 2
+## Viikko 2
 
 -Projektin kansiot luotu
 
-##Viikko 3
+## Viikko 3
 
 -Vaihdoin projektini aiheen
 -käyttäjä näkee ensimmäisellä kierroksella näkyvät kolme satunnaista korttia
@@ -11,7 +11,7 @@
 -Koodiin lisätty Deck luokka luo pakan joka on sekoitettu randomisti
 -Luokka "Card" piirtää yksitellen valitun kortin näytölle
 
-##Viikko 4
+## Viikko 4
 
 -Vaihdoin vielä projektini aiheen
 -Käyttäjä voi nostaa kortin pakasta painamalla "jatketaanko peliä?" painiketta
@@ -21,12 +21,19 @@
 -Painamalla tekstiä "Aloitetaanko alusta" alkaa uusi pelikierros
 -Ruudun oikeassa kulmassa on aloitettu pienesti laskuria, jonka tarkoitus olisi pitää kirjaa voitetuista ja hävityistä kierroksista (hyvin kesken)
 
-##Viikko 5
+## Viikko 5
 
 -Tein painikkeen, jota painamalla kierros päättyy. Painikkeessa lukee "Katsotaanko kortit?"
 -Siivosin koodia
 
-##Viikko 6
+## Viikko 6
 
 -Siirsin koodin, joka "piirtää" jotain ruudulle sille omaan kansioon nimeltä UI.
--Siivosin koodia.
+-Arkkitehtuuri
+-jakan ensimmäisen kortin päälle lisätty kuva, jonka avulla kortin arvoa ei näy pelaajalle.
+
+## Viikko 7
+
+-Korjasin bugeja
+
+-Peliin kuitenkin jäi yksi bugi, joka ilmenee niin että kun peli etenee siihen kohtaan että ensimmäinen korttipakka on käytetty loppuun niin ensimmäisellä kierroksella uuden korttipakan kanssa näyttö on mustana...kuitenkin peliä voi jatkaa normaalisti jos painaa laatikosta jossa lukee: "Aloitetaanko alusta?" tai näytöltä siitä kohtaa missä tämä laatikko on.

@@ -3,7 +3,7 @@
 
 Koodin pakkausrakenteeseen kuuluu kansio nimeltä "Services", joka sisältää sovelluksen logiikan. Tämän kansion sisällä on myös kaksi muuta kansiota, mitkä ovat "ui", joka sisältää käyttöliittymän ja kaiken "piirtämisen" sekä "entities" , joka sisältää sovelluksen käyttämiä png-tiedostoja.
 
-(tähän kuva)
+[kuva](https://github.com/risla763/ot-harjoitustyo/blob/master/seurapeli/dokumentaatio/IMG20230514232113.jpg)
 
 ## Käyttöliittymä
 
