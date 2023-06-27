@@ -1,9 +1,15 @@
 import sys
 import pygame
+import os
+from os import path
 from services.deck_of_cards import Deck
 from services.ui.draw_rect import Rect
 from services.ui.draw_deck import draw_deck
 from services.ui.next_cards import draw_next
+from services.score import Score
+from services.write_to_file import write_to_file
+from services.set_starting_score import write_zero_to_file
+from services.ui.fetch_high_score import get_high_score
 
 class Main:
     """This class defines the game screen values and other 
@@ -26,10 +32,22 @@ class Main:
         self.deck = Deck()
         self.fin = 0
         self.fin2 = 0
+        self.round_counter = 0
+
+        file_path = 'src/high_score_file.txt'
+        file = open(file_path, 'r')
+        file_contents = file.read()
+        file.close()
+
+        if len(file_contents) == 0:
+            write_zero_to_file() #toimii!
+        else:
+            pass
         self.restart(self.screen)
 
     def restart(self,screen):
         """This method starts the round from the beginning."""
+        #draw high score metodi tähän
         self.deck.fin, self.deck.fin2 = 0, 0
         self.deck.num, self.deck.num2 = 0, 0
         self.deck.first_rank = 0
@@ -42,10 +60,13 @@ class Main:
         self.dealer_x = 100
         count = 2
         self.count_dealer = 0
+#
+        get_high_score()
+        #TÄHÄN TEKEE SEN ETTÄ PIIRTÄÄ MITÄ HIGH:SCORE:TXT TIEDOSTOSSA ON
         card = self.deck.deal()
         draw_next(self.screen, (100, 100),card)
         self.first_rank = card.get_rank()
-        self.see_if_deck_empty()
+        #self.see_if_deck_empty()
         self.deck.next_card_dealer(self.screen,(1000,100),self.count_dealer)
         self.dealer_first_rank = self.deck.next_card_dealer(self.screen,
                                                             (1000,100),self.count_dealer)
@@ -53,6 +74,10 @@ class Main:
         self.deck.count2(self.screen,
                          count,self.dealer_first_rank)
         pygame.display.update()
+        #the_highest_score = write_to_file() #Tästä pitäisi saada korkein score draw
+        self.high_score_rect = Rect().make_changing_rect("High score: "+str(get_high_score()),
+                                                   (100,149,237), (119, 5, 0), (255, 255, 255),
+                                                   (100, 40, 250, 50),self.screen)
         self.input_rect = pygame.Rect(100,890,493,60)
         self.try_again = Rect().make_changing_rect("Aloitetaanko alusta?",
                                                    (100,149,237), (119, 5, 0), (255, 255, 255),
@@ -67,14 +92,18 @@ class Main:
                                                    (255, 255, 255),(650, 890, 332, 50),self.screen)
         self.deck.count(self.screen,count, self.first_rank)
         self.count_dealer += 1
+        #Score().player_high_score()
         self.game_loop()
 
     def game_loop(self):
-        self.see_if_deck_empty()
         """This is the basic game loop that handles user mouse clicks"""
         game_over = False
         count = 2
+        counter = 0
         while True:
+            counter += 1
+
+            #self.see_if_deck_empty()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
@@ -104,18 +133,21 @@ class Main:
                         self.value = self.deck.see_cards(self.screen)
                         game_over = self.deck.game_over_after_see_cards()
                         self.enable = False
-                xcoord = count*100
-                ycoord = 100
-                self.dealer_x = count*100+900
-                bconst = 100
-                card_positions = (xcoord,ycoord)
-                card_positions2 = (self.dealer_x,bconst)
-                pygame.display.flip()
-                pygame.display.update()
-        
-    def see_if_deck_empty(self):
+            xcoord = count*100
+            ycoord = 100
+            self.dealer_x = count*100+900
+            bconst = 100
+            card_positions = (xcoord,ycoord)
+            card_positions2 = (self.dealer_x,bconst)
+            pygame.display.flip()
+
+
+            pygame.display.update()
+
+    #def see_if_deck_empty(self):
         """This should fix the bug that the screen turns black
          during the first round when the deck starts over. """
-        if self.deck.see_if_empty() == True:
-            Main()
+        #if self.deck.see_if_empty() == True:
+            #draw high score metodi tähän
+            #Main()
 main = Main()

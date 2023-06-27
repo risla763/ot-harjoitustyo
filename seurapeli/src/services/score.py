@@ -2,6 +2,7 @@ import pygame.font
 import pygame
 from services.ui.draw_rect import Rect
 from services.ui.score_ui import draw_score
+from services.write_to_file import write_to_file
 
 class Score:
     """This class keeps track of who has won more rounds, the dealer or the player
@@ -17,8 +18,9 @@ class Score:
         self.player_rect = Rect().make_changing_rect2
         self.screen_width = 1800
         self.screen_height= 1000
-        self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
+        #self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
         self.screen = screen
+        self.counter = 0
     def which_is_it(self,fin, fin2):
         """This method compares the sum of the players' cards in the round and calculates
         who wins that round
@@ -40,5 +42,13 @@ class Score:
             else:
                 self.dealer += 1
                 draw_score(self,self.player,self.dealer)
+        self.saved_value = self.player
         return self.player,self.dealer
-        
+    
+    def player_high_score(self):
+        player_value, _ = self.which_is_it(self.player, 0)
+        return player_value
+
+    def get_player_score(self):
+        _, _ = self.which_is_it(self.player, 0) 
+        return self.player

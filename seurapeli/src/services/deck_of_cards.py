@@ -5,6 +5,9 @@ from services.card_deck import Card
 from services.score import Score
 from services.flip_side import Flip
 from services.ui.next_cards import draw_next
+from services.write_to_file import write_to_file
+from services.ui.score_ui import draw_score
+
 
 
 class Deck:
@@ -43,6 +46,9 @@ class Deck:
         """This method removes a card from the deck and returns it."""
         # poistaa ja palauttaa?
         if len(self.cards) == 0:
+            #tässä hae jostain se
+            write_to_file(self.score.player_high_score())
+            #print(Score().get_player_score())
             self.__init__()
         return self.cards.pop()
 
@@ -51,6 +57,9 @@ class Deck:
         also in this method card gets a variable where is its rank
         """
         if len(self.cards) == 0:
+            #tässä hae jostain se
+            write_to_file(self.score.player_high_score())
+            #print(Score().get_player_score())
             self.__init__()
         card = self.cards.pop()
         self.num = card.get_rank()
@@ -66,6 +75,8 @@ class Deck:
         Returns: the value of the card dealt
             """
         if len(self.cards) == 0:
+            write_to_file(self.score.player_high_score())
+            #print(Score().get_player_score())
             self.__init__()
         card = self.cards.pop()
         if count_dealer == 0:
