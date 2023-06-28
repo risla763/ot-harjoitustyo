@@ -7,13 +7,14 @@ from services.flip_side import Flip
 from services.ui.next_cards import draw_next
 from services.write_to_file import write_to_file
 from services.ui.score_ui import draw_score
+from services.ui.draw_high_score_box import draw_new_deck_box
 
 
 
 class Deck:
     """This class shuffles the card deck and
     has some logic in it how the counting and rounds work."""
-    def __init__(self):
+    def __init__(self,screen):
         """This is the constructor of the
         class and it has lists of colors and values of the cards.
         It also shuffles and makes the deck."""
@@ -32,7 +33,7 @@ class Deck:
         self.font = pygame.font.SysFont("Inter", 77)  # muokaa tätä draw_rect
         self.screen_width = 1800
         self.screen_height= 1000
-        self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
+        self.screen = screen
         self.num_surface = 0
         self.input_rect = pygame.Rect(1390, 45, 70, 50)
         self.suit_imp = card.get_suit()
@@ -46,10 +47,10 @@ class Deck:
         """This method removes a card from the deck and returns it."""
         # poistaa ja palauttaa?
         if len(self.cards) == 0:
-            #tässä hae jostain se
+            draw_new_deck_box(self,self.screen)
             write_to_file(self.score.player_high_score())
             #print(Score().get_player_score())
-            self.__init__()
+            self.__init__(self.screen)
         return self.cards.pop()
 
     def next_card(self):
@@ -57,10 +58,10 @@ class Deck:
         also in this method card gets a variable where is its rank
         """
         if len(self.cards) == 0:
-            #tässä hae jostain se
+            draw_new_deck_box(self,self.screen)
             write_to_file(self.score.player_high_score())
             #print(Score().get_player_score())
-            self.__init__()
+            self.__init__(self.screen)
         card = self.cards.pop()
         self.num = card.get_rank()
         return card
@@ -75,9 +76,10 @@ class Deck:
         Returns: the value of the card dealt
             """
         if len(self.cards) == 0:
+            draw_new_deck_box(self,self.screen)
             write_to_file(self.score.player_high_score())
             #print(Score().get_player_score())
-            self.__init__()
+            self.__init__(screen)
         card = self.cards.pop()
         if count_dealer == 0:
             draw_next(screen, card_positions2,card)

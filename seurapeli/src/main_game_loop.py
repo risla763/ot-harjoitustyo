@@ -29,7 +29,7 @@ class Main:
         pygame.display.set_caption("blackjack harjoitin")
         self.screen.fill(self.color)
         pygame.display.flip()
-        self.deck = Deck()
+        self.deck = Deck(self.screen)
         self.fin = 0
         self.fin2 = 0
         self.round_counter = 0
