@@ -46,7 +46,7 @@ class Score:
                     self.dealer += 1
                     draw_score(self,self.player,self.dealer)
             elif abs(fin2-21) == abs(fin-21):
-                draw_tie()
+                draw_tie(self)
             self.saved_value = self.player
             return self.player,self.dealer
         else:
