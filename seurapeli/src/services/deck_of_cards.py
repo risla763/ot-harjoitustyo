@@ -44,12 +44,11 @@ class Deck:
         self.score = Score(self.screen)
 
     def deal(self):
-        """This method removes a card from the deck and returns it."""
-        # poistaa ja palauttaa?
+        """This method removes a card from the deck and returns it. 
+        Also if the deck is empty it will reset the constructor of the Deck class."""
         if len(self.cards) == 0:
             draw_new_deck_box(self,self.screen)
             write_to_file(self.score.player_high_score())
-            #print(Score().get_player_score())
             self.__init__(self.screen)
         return self.cards.pop()
 

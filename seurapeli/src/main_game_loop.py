@@ -144,10 +144,4 @@ class Main:
 
             pygame.display.update()
 
-    #def see_if_deck_empty(self):
-        """This should fix the bug that the screen turns black
-         during the first round when the deck starts over. """
-        #if self.deck.see_if_empty() == True:
-            #draw high score metodi tähän
-            #Main()
 main = Main()

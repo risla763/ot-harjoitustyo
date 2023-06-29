@@ -1,4 +1,4 @@
-#from services.score import Score
+
 from services.ui.draw_rect import Rect
 
 
@@ -12,10 +12,10 @@ def draw_score(self,player,dealer):
         self.player_rect = Rect().make_changing_rect2
         
         play = self.player_rect(self.player,
-                         (255, 255, 255), (0, 0, 0), (255, 255, 255),(1050, 15, 50, 50),self.screen)
+                         (255, 255, 255), (0, 0, 0), (255, 255, 255),(1090, 15, 50, 50),self.screen)
         #tähän viiva
         dea = self.dealer_rect(self.dealer,
-                         (255, 255, 255), (0, 0, 0), (255, 255, 255),(1100,15,50,50),self.screen)
+                         (255, 255, 255), (0, 0, 0), (255, 255, 255),(1140,15,50,50),self.screen)
 
         return player
 

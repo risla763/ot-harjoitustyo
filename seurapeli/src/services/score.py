@@ -52,6 +52,7 @@ class Score:
             return self.player,self.dealer
     
     def player_high_score(self):
+        """This method fetches the value of self.player which is the score what the player gets every round total."""
         self.switch = True
         player_value, _ = self.which_is_it(self.player, 0)
         return self.saved_value
