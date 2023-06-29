@@ -3,6 +3,7 @@ import pygame
 from services.ui.draw_rect import Rect
 from services.ui.score_ui import draw_score
 from services.write_to_file import write_to_file
+from services.ui.tie_ui import draw_tie
 
 class Score:
     """This class keeps track of who has won more rounds, the dealer or the player
@@ -44,6 +45,8 @@ class Score:
                 else:
                     self.dealer += 1
                     draw_score(self,self.player,self.dealer)
+            elif abs(fin2-21) == abs(fin-21):
+                draw_tie()
             self.saved_value = self.player
             return self.player,self.dealer
         else:
