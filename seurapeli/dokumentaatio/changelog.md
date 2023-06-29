@@ -37,3 +37,7 @@
 -Korjasin bugeja
 
 -Peliin kuitenkin jäi yksi bugi, joka ilmenee niin että kun peli etenee siihen kohtaan että ensimmäinen korttipakka on käytetty loppuun niin ensimmäisellä kierroksella uuden korttipakan kanssa näyttö on mustana...kuitenkin peliä voi jatkaa normaalisti jos painaa laatikosta jossa lukee: "Aloitetaanko alusta?" tai näytöltä siitä kohtaa missä tämä laatikko on.
+
+## 28-29.6
+
+-Korjasin edellämainitun bugin sekä tein lisäominaisuuden peliin, joka tallentaa levylle tietoa ja pitää kirjaa pelaajan parhaimmasta suorituksesta (high score).
