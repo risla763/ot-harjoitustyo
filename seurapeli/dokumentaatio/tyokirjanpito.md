@@ -33,3 +33,10 @@
 
 Yhteensä: 56h
  
+## 28.6 
+-Käytin noin kolme tuntia lisäyksen tekemiseen eli tein uuden ominaisuuden peliin, 
+jonka tarkoituksena on pitää kirjaa pelin parhaimmasta suorituksesta (high score) ja tallentaa sitä levylle. 3h
+
+## 29.6
+-Käytin kaksi tuntia koodaamiseen, joiden aikana viimeistelin uuden ominaisuu. Korjasin myös vanhan bugin, 
+joka aiheutti näytön bugimisen silloin kun "uusi pakka avattiin" eli uusi kierros alkoi.
