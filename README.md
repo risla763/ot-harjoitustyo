@@ -1,6 +1,6 @@
 # Ohjelmistotekniikka harjoitustyö
 
-Olen tekemässä japaninkielen *hiragana*-kirjoitusmerkkien harjoittelua varten sovelluksen, joka toimii samalla tapaa kuin muistikorteilla kielen harjoittelu.
+Olen tekemässä japaninkielen *hiragana*-kirjoitusmerkkien harjoittelua varten sovelluksen, joka toimii samalla tapaa kuin **muistikorteilla** kielen harjoittelu.
 
 ## Laskarit
 
