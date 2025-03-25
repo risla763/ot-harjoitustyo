@@ -14,6 +14,6 @@
 - Ehkä peliä voisi pelata myös kokonaisilla lauseilla tai sanoilla eikä vain pelkkää kirjainmerkkien tunnistusta
 
 ## Toiminnallisuuksien logiikasta
--PostgreSQL tietokanta.
--Peli lokaalina koneella
--Hiraganat saatu netistä olevista kirjastoista.
+- PostgreSQL tietokanta.
+- Peli lokaalina koneella
+- Hiraganat saatu netistä olevista kirjastoista.
