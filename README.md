@@ -4,8 +4,11 @@ Olen tekemässä *japaninkielen* hiragana-kirjoitusmerkkien harjoittelua varten 
 
 ## Ohjelmointikieli
 
-Python
+Python ja tietokanta SQL
 
+## Vaatimusmäärittely
+
+[Linkki vaatimusmäärittelyyn](https://github.com/risla763/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
 ## Laskarit
 
