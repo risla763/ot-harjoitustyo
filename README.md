@@ -32,4 +32,4 @@ Python
 
 ## Työkirjanpito
 
-[Linkki työkirjanpitoon](https://github.com/risla763/ot-harjoitustyo/blob/main/dokumentaatio/tyokirjanpito)
+[Linkki työkirjanpitoon](https://github.com/risla763/ot-harjoitustyo/blob/main/tyokirjanpito.md)
