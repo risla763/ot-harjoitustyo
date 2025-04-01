@@ -8,7 +8,7 @@ Python ja tietokanta SQL
 
 ## Vaatimusmäärittely
 
-[Linkki vaatimusmäärittelyyn](https://github.com/risla763/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
+[Linkki vaatimusmäärittelyyn](https://github.com/risla763/ot-harjoitustyo/blob/main/hiragana-app/dokumentaatio/vaatimusmaarittely.md)
 
 ## Laskarit
 
