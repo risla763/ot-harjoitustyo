@@ -26,11 +26,8 @@ screen.fill("purple")
 run = True
 game_menu_screen = True
 
-#tämä siirtyy muualle:
-#start_game_button = Button().make_rect("Start game ",
-                                                 #  (255, 182, 193), (255, 255, 255),
-                                                  # (200, 200, 190, 40), screen)
-start_game_button = StartingScreen(screen).make_rect()
+start_game_button = StartingScreen(screen).make_rect("start game",(200, 200, 190, 40))
+scoreboard_button = StartingScreen(screen).make_rect("score board",(400, 200, 190, 40))
 
 while run:
 
@@ -45,6 +42,11 @@ while run:
     if event.type == pygame.MOUSEBUTTONDOWN:
         while game_menu_screen:
             if start_game_button.collidepoint(pygame.mouse.get_pos()):
+                game_screen(screen)
+                game_menu_screen = False
+                #pygame.display.flip() 
+                print("klikattu nappia")
+            elif scoreboard_button.collidepoint(pygame.mouse.get_pos()):
                 game_screen(screen)
                 game_menu_screen = False
                 #pygame.display.flip() 
