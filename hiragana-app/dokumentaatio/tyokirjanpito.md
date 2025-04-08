@@ -4,4 +4,4 @@ Lauantaina 29.4 käytin 2 tuntia siihen, että opiskelin miten pygamella voidaan
 
 Tiistaina 1.4 viimeistelin nappia 30 min ja myös lisäsin invoken (hieman myöhässä) mutta kuitenkin. 
 
-8.4 Lisäsin pylint ja tein toisen napin sovellukseen ja koitin järjestellä koodia oikeisiin kansioihin. Aika loppui kesken..
+8.4 Lisäsin pylint ja tein toisen napin sovellukseen ja koitin järjestellä koodia oikeisiin kansioihin. Tein noin 2h.
