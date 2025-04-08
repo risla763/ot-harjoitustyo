@@ -1,4 +1,7 @@
 src/__pycache__/
 src/tests/__pycache__/
+.poetry.lock
+.pylintrc
+.pyproject.toml
 .coverage
 .pytest_cache
