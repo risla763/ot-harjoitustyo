@@ -1,5 +1,5 @@
 from objects.buttons import Button
-
+from ui.game_menu_screen import StartingScreen
 import pygame
 
 pygame.init()
@@ -27,9 +27,10 @@ run = True
 game_menu_screen = True
 
 #tämä siirtyy muualle:
-start_game_button = Button().make_rect("Start game ",
-                                                   (255, 182, 193), (255, 255, 255),
-                                                   (200, 200, 190, 40), screen)
+#start_game_button = Button().make_rect("Start game ",
+                                                 #  (255, 182, 193), (255, 255, 255),
+                                                  # (200, 200, 190, 40), screen)
+start_game_button = StartingScreen(screen).make_rect()
 
 while run:
 
