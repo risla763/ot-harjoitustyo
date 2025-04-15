@@ -1,5 +1,7 @@
 from objects.buttons import Button
-from ui.game_menu_screen import StartingScreen
+from ui.make_rect import Rect
+from ui.game_screen import GameScreen
+from ui.menu_screen_ui import MenuScreen
 import pygame
 
 pygame.init()
@@ -9,12 +11,10 @@ screen_height = 720
 screen = pygame.display.set_mode((screen_width,screen_height))
 pygame.display.set_caption('Hiragana learning app')
 
-#button stuff 
-width, height = 640, 480
+#pylint
 
-#lisää fontti alempaan
 
-#testi screenin vaihto ja tämä myös tulee muualle
+#nämä kaksi alempaa muaalle (NIMEÄ KANSIOT HYVIN!)
 def game_screen(screen):
     screen.fill((0, 0, 0))  
     font = pygame.font.SysFont(None, 50)
@@ -22,12 +22,23 @@ def game_screen(screen):
     screen.blit(text_surface, (200, 200))
     pygame.display.flip()
 
-screen.fill("purple")
-run = True
-game_menu_screen = True
 
-start_game_button = StartingScreen(screen).make_rect("start game",(200, 200, 190, 40))
-scoreboard_button = StartingScreen(screen).make_rect("score board",(400, 200, 190, 40))
+MenuScreen().game_menu_screen(screen)
+
+run = True
+game_menu_screen_boolean = True
+game_screen_boolean = False
+scoreboard_screen = False
+
+start_game_button = Rect(screen).make_rect("start game",(200, 200, 190, 40))
+scoreboard_button = Rect(screen).make_rect("score board",(400, 200, 190, 40))
+#tämä alempi vain koska sellainen tarvitaan, mutta ongelma, miten se saada näkyviin vasta kun näyttö vaihtuu
+input_field_button = Rect(screen).make_rect("score board",(400, 200, 190, 40))
+
+
+input_active = False
+font = pygame.font.Font(None, 32)
+user_text = ''
 
 while run:
 
@@ -35,26 +46,48 @@ while run:
         if event.type == pygame.QUIT:
             run = False
 
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            while game_menu_screen_boolean:
+                MenuScreen().game_menu_screen(screen)
+                if start_game_button.collidepoint(pygame.mouse.get_pos()):
+                    game_screen(screen)
+                    game_menu_screen_boolean = False
+                    #game_screen_boolean = True
+                    pygame.display.flip() 
+
+                elif scoreboard_button.collidepoint(pygame.mouse.get_pos()):
+                    game_screen(screen)
+                    game_menu_screen_boolean = False
+                    scoreboard_screen = True
+                
+                else:
+                    break
 
 
-
-   
-    if event.type == pygame.MOUSEBUTTONDOWN:
-        while game_menu_screen:
-            if start_game_button.collidepoint(pygame.mouse.get_pos()):
+                #tämä alempi vasta aktiivinen kun peli käynnistetty
+                #otin mallia chatgpt:ltä mutta vain joissain kohdissa??
+                #käytänkö edes?
+            while game_screen_boolean:
                 game_screen(screen)
-                game_menu_screen = False
-                #pygame.display.flip() 
-                print("klikattu nappia")
-            elif scoreboard_button.collidepoint(pygame.mouse.get_pos()):
-                game_screen(screen)
-                game_menu_screen = False
-                #pygame.display.flip() 
-                print("klikattu nappia")
-        
+                if input_field_button.collidepoint(pygame.mouse.get_pos()):
+                    text = ""
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RETURN:
+                            print("enter painettu")
+                    elif event.key == pygame.K_BACKSPACE:
+                        text = text[:-1]
+                    else:
+                        text += event.unicode
+                #
+        if event.type == pygame.KEYDOWN:
+            user_text += event.unicode
+            print("moi")
+
+            text_surface = font.render(user_text, True, (255,255,255))
+            screen.blit(text_surface,(0,0))
 
 
-    #pygame.display.flip() 
+    pygame.display.flip() 
 
 
 pygame.quit()
