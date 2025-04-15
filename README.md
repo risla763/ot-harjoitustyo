@@ -23,3 +23,6 @@ Python ja tietokanta SQL
 ## Työkirjanpito
 
 [Linkki työkirjanpitoon](https://github.com/risla763/ot-harjoitustyo/blob/main/hiragana-app/dokumentaatio/tyokirjanpito.md)
+
+##Changelog
+[Linkki changelogiin](https://github.com/risla763/ot-harjoitustyo/blob/main/hiragana-app/dokumentaatio/changelog.md)
