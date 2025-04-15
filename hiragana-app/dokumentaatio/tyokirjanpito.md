@@ -5,3 +5,7 @@ Lauantaina 29.4 käytin 2 tuntia siihen, että opiskelin miten pygamella voidaan
 Tiistaina 1.4 viimeistelin nappia 30 min ja myös lisäsin invoken (hieman myöhässä) mutta kuitenkin. 
 
 8.4 Lisäsin pylint ja tein toisen napin sovellukseen ja koitin järjestellä koodia oikeisiin kansioihin. Tein noin 2h.
+
+9.4 Tein inputkenttää eteenpäin, että nyt jos näppäimistöllä käyttäjä kirjoittaa tekstiä niin se ilmestyy näytölle. Korjailin myös arkkitehtuuria. 1h
+
+15.4 Korjailin arkkitehtuuria ja aloitin testit tekemällä yhden testin 2h.
