@@ -10,6 +10,7 @@ import pygame
 #testit
 #arkkitehtuuri
 #toimiiko .gitignore
+#Hiraganat eivät voi tulla kahta samaa peräkkäin
 
 pygame.init()
 screen_width = 1200
@@ -26,10 +27,6 @@ scoreboard_screen = False
 
 start_game_button = Buttons(screen).make_rect("start game",(200, 200, 190, 40))
 scoreboard_button = Buttons(screen).make_rect("score board",(400, 200, 190, 40))
-#tämä alempi vain koska sellainen tarvitaan, mutta ongelma, miten se saada näkyviin vasta kun näyttö vaihtuu
-
-input_field_button = Buttons(screen).make_rect("score board",(400, 200, 190, 40))
-
 
 input_active = False
 font = pygame.font.Font(None, 32)
@@ -59,19 +56,28 @@ while run:
                 else:
                     break
 
-
-                #tämä alempi vasta aktiivinen kun peli käynnistetty
-                #käytänkö edes?
-        
+                    
         if event.type == pygame.KEYDOWN:
             if game_screen_boolean:
+                if event.key == pygame.K_BACKSPACE: #jos pitää K_BACKSPACEN alhaalla kumittaako?
+                    user_text = user_text[:-1]
+                    #tee tälle raja jos user_tetx on pitempi kuin inputfield ei voi enää kirjottaa
+                    screen.blit(text_surface,(500,400))
+                elif event.key == pygame.K_RETURN:
+                    print(user_text)
+                    user_text = ''  
+                    GameScreen().game_screen(screen)
+                else:
+                    user_text += event.unicode
 
-                user_text += event.unicode
-                print("moi")
+                #tämä alla oleva koodi aiheuttaa flickering..voiko korjata
+                GameScreen().make_input_field((500, 400, 190, 50), screen)
+                #
+                text_surface = font.render(user_text, True, (173, 216, 230)) #renderöi tekstin ( siirrä ui osastoon)
+                screen.blit(text_surface,(500,400)) #tämä päivittää siirrä ui osastoon
+                pygame.display.flip() #ehkä turha
 
-                text_surface = font.render(user_text, True, (173, 216, 230))
-                screen.blit(text_surface,(500,400))
-
+                
                 #jos painaa enteriä....tarkistaa onko oikea kirjain..
 
     pygame.display.flip() 

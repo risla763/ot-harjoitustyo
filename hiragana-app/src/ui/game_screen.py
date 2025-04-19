@@ -14,6 +14,7 @@ class GameScreen:
         text_surface = font.render("Game comes here", True, (173, 216, 230))
         screen.blit(text_surface, (200, 200))
         HiraganaPictureLogic(screen)
+        HiraganaPictureLogic(screen).list_hiraganas() #piirtää ekan hiraganan
         pygame.display.flip()
 
     def make_input_field(self, position, screen):
