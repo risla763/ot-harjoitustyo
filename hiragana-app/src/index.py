@@ -1,16 +1,18 @@
-from objects.button_rect import ButtonRect
+from objects.rect import ButtonRect
 from ui.button_ui import Buttons
 from ui.game_screen import GameScreen
 from ui.menu_screen_ui import MenuScreen
 from logic.hiragana_pictures import HiraganaPictureLogic
+from logic.answers import CheckAndReviev
 import pygame
 
 #tehtävälista
-#pylint
-#testit
-#arkkitehtuuri
+#pylint!!
+#testit!!
+#arkkitehtuuri!!
 #toimiiko .gitignore
 #Hiraganat eivät voi tulla kahta samaa peräkkäin
+#koodikatselmointi!!
 
 pygame.init()
 screen_width = 1200
@@ -42,8 +44,10 @@ while run:
             while game_menu_screen_boolean:
                 MenuScreen().game_menu_screen(screen) #onko tarvittava
                 if start_game_button.collidepoint(pygame.mouse.get_pos()):
-                    GameScreen().game_screen(screen)
-                    GameScreen().make_input_field((500, 400, 190, 50), screen)
+                    GameScreen(screen).game_screen()
+                    hiraganas = HiraganaPictureLogic().list_hiraganas()
+                    hiragana_tuple = GameScreen(screen).draw_hiragana(hiraganas)
+                    GameScreen(screen).make_input_field((500, 400, 190, 50), screen)
                     game_menu_screen_boolean = False     
                     game_screen_boolean = True      
                     pygame.display.flip() #onko tarvittava
@@ -64,14 +68,16 @@ while run:
                     #tee tälle raja jos user_tetx on pitempi kuin inputfield ei voi enää kirjottaa
                     screen.blit(text_surface,(500,400))
                 elif event.key == pygame.K_RETURN:
-                    print(user_text)
-                    user_text = ''  
-                    GameScreen().game_screen(screen)
+                    print(user_text) 
+                    #tässä viittaa uuteen fileen, jossa tarkistetaan user_input
+                    CheckAndReviev(hiraganas).check_answer(hiragana_tuple, user_text, screen)
+                    hiragana_tuple = GameScreen(screen).draw_hiragana(hiraganas) #valitsee randomilla jonkun hiraganan
+                    user_text = '' 
                 else:
                     user_text += event.unicode
 
                 #tämä alla oleva koodi aiheuttaa flickering..voiko korjata
-                GameScreen().make_input_field((500, 400, 190, 50), screen)
+                GameScreen(screen).make_input_field((500, 400, 190, 50), screen)
                 #
                 text_surface = font.render(user_text, True, (173, 216, 230)) #renderöi tekstin ( siirrä ui osastoon)
                 screen.blit(text_surface,(500,400)) #tämä päivittää siirrä ui osastoon

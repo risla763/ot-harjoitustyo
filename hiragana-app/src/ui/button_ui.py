@@ -1,5 +1,5 @@
 import pygame
-from objects.button_rect import ButtonRect
+from objects.rect import ButtonRect
 
 class Buttons:
 

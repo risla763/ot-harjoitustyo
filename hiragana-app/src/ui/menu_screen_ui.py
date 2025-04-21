@@ -1,11 +1,11 @@
 import pygame
-from objects.button_rect import ButtonRect
+from objects.rect import ButtonRect
 from ui.button_ui import Buttons
 
 class MenuScreen:
 
     def __init__(self):
-        pygame.init()
+        pygame.init() #onko turha
 
     #chatgpt auttoi tämän metodin luomisessa
     def game_menu_screen(self, screen):
@@ -14,3 +14,5 @@ class MenuScreen:
         start_game_button = Buttons(screen).make_rect("start game",(200, 200, 190, 40))
         global scoreboard_button 
         scoreboard_button = Buttons(screen).make_rect("score board",(400, 200, 190, 40))
+
+#kuva taulukosta missä kaikki hiraganat ja tavut niille
