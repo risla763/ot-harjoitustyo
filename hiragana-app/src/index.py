@@ -6,13 +6,15 @@ from logic.hiragana_pictures import HiraganaPictureLogic
 from logic.answers import CheckAndReviev
 import pygame
 
-#tehtävälista
-#pylint!!
-#testit!!
+#tehtävälista:
+#pylint
+#testit
 #arkkitehtuuri!!
-#toimiiko .gitignore
-#Hiraganat eivät voi tulla kahta samaa peräkkäin
-#koodikatselmointi!!
+#.gitignore
+#dokumentatointi kesken
+#coveragerg tiedostoon kaikki mitä coverage raporttiin ei haluta ja coverage raport
+#scoreboard ja sql, johon ainakin korkein score
+#käyttäjätunnus ja kirjautuminen
 
 pygame.init()
 screen_width = 1200
@@ -29,6 +31,7 @@ scoreboard_screen = False
 
 start_game_button = Buttons(screen).make_rect("start game",(200, 200, 190, 40))
 scoreboard_button = Buttons(screen).make_rect("score board",(400, 200, 190, 40))
+
 
 input_active = False
 font = pygame.font.Font(None, 32)
@@ -68,8 +71,6 @@ while run:
                     #tee tälle raja jos user_tetx on pitempi kuin inputfield ei voi enää kirjottaa
                     screen.blit(text_surface,(500,400))
                 elif event.key == pygame.K_RETURN:
-                    print(user_text) 
-                    #tässä viittaa uuteen fileen, jossa tarkistetaan user_input
                     CheckAndReviev(hiraganas).check_answer(hiragana_tuple, user_text, screen)
                     hiragana_tuple = GameScreen(screen).draw_hiragana(hiraganas) #valitsee randomilla jonkun hiraganan
                     user_text = '' 
@@ -82,9 +83,6 @@ while run:
                 text_surface = font.render(user_text, True, (173, 216, 230)) #renderöi tekstin ( siirrä ui osastoon)
                 screen.blit(text_surface,(500,400)) #tämä päivittää siirrä ui osastoon
                 pygame.display.flip() #ehkä turha
-
-                
-                #jos painaa enteriä....tarkistaa onko oikea kirjain..
 
     pygame.display.flip() 
 

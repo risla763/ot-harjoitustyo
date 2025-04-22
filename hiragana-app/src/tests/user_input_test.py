@@ -5,6 +5,7 @@ from logic.hiragana_pictures import HiraganaPictureLogic
 
 
 class TestInput(unittest.TestCase):
+    """Testaa käyttäjän syöttämää tekstiä"""
     def setUp(self):
         pygame.init()
         screen_width = 1200
@@ -19,9 +20,11 @@ class TestInput(unittest.TestCase):
         self.user_input_wrong = "1"
 
     def test_answer_correctly(self):
+        """Testaa tarkistaako ohjelma käyttäjän antaman vastauksen oikein"""
         answer = CheckAndReviev(self.hiraganas).check_answer(self.hiragana_tuple, self.user_input, self.screen)
         self.assertEqual(answer, (True))
 
     def test_answer_wrong(self):
+        """Testaa huomaako ohjelma onko käyttäjän antama vastaus väärin"""
         answer = CheckAndReviev(self.hiraganas).check_answer(self.hiragana_tuple, self.user_input_wrong, self.screen)
         self.assertEqual(answer, (False))
