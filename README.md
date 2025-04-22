@@ -7,6 +7,12 @@ Asenna tarvittavat riippuvuudet: poetry install
 Suorita alustava toimenpide: poetry add invoke
 Käynnistä sovellus: "poetry run invoke start" tulee suorittaa kansiossa "hiragana-app" jos ei halua käyttää invokea niin pelin saa myös päälle "hiragana-app" nimisessä kansiossa: poetry run python src/index.py
 
+## testit
+
+Testit voidaan ajaa sovelluksessa komennolla: 'poetry run invoke tests' ja testeistä tehdyn raportin voi saada: 'poetry run invoke coverage-report'.
+Raportin saa auki esimerkiksi: 'xdg-open htmlcov/index.html'.
+
+
 
 ## Ohjelmointikieli
 
