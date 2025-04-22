@@ -13,11 +13,13 @@ class CheckAndReviev:
         if syllable == user_input:
             answer = True
             GameScreen(screen).comment_if_correct(answer, syllable)
+            return answer
         else:
             answer = False
             syllable = syllable.replace('{','')
             syllable = syllable.replace('}','')
             GameScreen(screen).comment_if_correct(answer, syllable)
+            return answer
 
     #def scoreboard(self):
         #myös sellainen että kuinka monta kertaa kukin tavu mennyt oikein tai väärin
