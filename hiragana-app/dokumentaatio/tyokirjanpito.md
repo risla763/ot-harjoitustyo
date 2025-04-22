@@ -19,3 +19,5 @@ Tiistaina 1.4 viimeistelin nappia 30 min ja myös lisäsin invoken (hieman myöh
 21.4 Tein 1h (testejä, ja ohjelma kertoo onko käyttäjän antama input oikein eli onko käyttäjä arvannut oikein hiraganan)
 
 22.4 Tein 3h (siivosin koodia, jatkoin aiemmin viikko 6 tehtyjä asioita sekä aloitin dokumentaation)
+
+Summa: 18h
