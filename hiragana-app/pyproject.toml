@@ -1,24 +1,25 @@
-[tool.poetry]
+[project]
 name = "ot-harjoitustyo"
 version = "0.1.0"
 description = ""
-authors = ["Maija <maija.rislakki@helsinki.fi>"]
+authors = [
+    {name = "Maija",email = "maija.rislakki@helsinki.fi"}
+]
 readme = "README.md"
-packages = [{ include = "ot_harjoitustyo" }]
 requires-python = "^3.10"
+dependencies = [
+    "pygame (>=2.6.1,<3.0.0)",
+    "invoke (>=2.2.0,<3.0.0)",
+    "coverage (>=7.8.0,<8.0.0)"
+]
 
-[tool.poetry.dependencies]
-pygame = ">=2.6.1,<3.0.0"
-invoke = ">=2.2.0,<3.0.0"
-coverage = ">=7.8.0,<8.0.0"
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.3.5"
-pylint = "^3.3.6"
-autopep8 = "^2.3.2"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+pylint = "^3.3.6"
+autopep8 = "^2.3.2"
 
