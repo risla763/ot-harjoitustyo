@@ -20,4 +20,6 @@ Tiistaina 1.4 viimeistelin nappia 30 min ja myös lisäsin invoken (hieman myöh
 
 22.4 Tein 3h (siivosin koodia, jatkoin aiemmin viikko 6 tehtyjä asioita sekä aloitin dokumentaation)
 
-Summa: 18h
+29.4 Tein 1h arkkitehtuuria, pylint virheiden korjausta.
+
+Summa: 19h
