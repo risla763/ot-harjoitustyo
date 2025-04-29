@@ -16,3 +16,7 @@ antamaa inputtia sekä hiraganaa, joka näytöllä sillä hetkellä on niin ett�
 Tein myös uusia testejä. 
 
 Aloitin myös exit game napin tekemisen.
+
+## Viikko 7
+
+Ollut kiireitä, enkä ole tehnyt suuria muutoksia. Tein arkkitehtuurin (vielä kesken kuitenkin).
