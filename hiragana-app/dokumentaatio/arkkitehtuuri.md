@@ -8,4 +8,4 @@ Ohjelma koostuu kansioista. Ohjelma on "src" -nimisen kansion sisällä. Tämän
 -objects (erilaisia käyttöliittymään käytettäviä palasia, kuten koodi, miten tehdään suorakulmio ohjelman napeille)
 -assets (ulkopuoliset kirjastot, kuvat yms.)
 
-![Arkkitehtuuri](./dokumentaatio/kuvat/arkkitehtuuri.jpg)
+![Arkkitehtuuri](./kuvat/arkkitehtuuri.jpg)
