@@ -1,11 +1,11 @@
-## Viikko 5
+## Viikko 4
 
 Sain tehtyä ensimmäisen testin. Testit voidaan vetää komennolla "poetry run invoke tests".
 Sain paranneltua koodin arkkitehtuuria.
 Sain korjattua pari bugia.
 Aloitin tekemään input kenttää, joten jos nyt käyttäjä kirjoittaa jotain näppäimistöllä niin kirjoitettu teksti ilmestyy näytölle.
 
-## Viikko 6
+## Viikko 5
 
 Hain netistä hiraganamerkkien kuvia, jotka nyt näkyvät näytöllä. Kuvat ovat nyt listassa, jossa on jokaisen hiraganan kanssa
 tavu, joka vastaa sitä. 
@@ -17,6 +17,6 @@ Tein myös uusia testejä.
 
 Aloitin myös exit game napin tekemisen.
 
-## Viikko 7
+## Viikko 6
 
 Ollut kiireitä, enkä ole tehnyt suuria muutoksia. Tein arkkitehtuurin (vielä kesken kuitenkin).
