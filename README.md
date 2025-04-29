@@ -35,4 +35,4 @@ Python ja tietokanta SQL
 
 ## Arkkitehtuuri
 
-[Linkki arkkitehtuuriin](https://github.com/risla763/ot-harjoitustyo/tree/main/hiragana-app/dokumentaatio)
+[Linkki arkkitehtuuriin](https://github.com/risla763/ot-harjoitustyo/tree/main/hiragana-app/dokumentaatio/arkkitehtuuri.md)
