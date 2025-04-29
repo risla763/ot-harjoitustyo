@@ -32,3 +32,7 @@ Python ja tietokanta SQL
 
 ## Changelog
 [Linkki changelogiin](https://github.com/risla763/ot-harjoitustyo/blob/main/hiragana-app/dokumentaatio/changelog.md)
+
+## Arkkitehtuuri
+
+[Linkki arkkitehtuuriin](https://github.com/risla763/ot-harjoitustyo/tree/main/hiragana-app/dokumentaatio)
