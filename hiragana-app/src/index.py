@@ -51,19 +51,17 @@ while run:
                     hiraganas = HiraganaPictureLogic().list_hiraganas()
                     hiragana_tuple = GameScreen(screen).draw_hiragana(hiraganas)
                     GameScreen(screen).make_input_field((500, 400, 190, 50), screen)
-                    game_menu_screen_boolean = False     
-                    game_screen_boolean = True      
+                    game_menu_screen_boolean = False
+                    game_screen_boolean = True
                     pygame.display.flip() #onko tarvittava
 
                 elif scoreboard_button.collidepoint(pygame.mouse.get_pos()):
                     GameScreen().game_screen(screen)
                     game_menu_screen_boolean = False
                     scoreboard_screen = True
-                
                 else:
                     break
 
-                    
         if event.type == pygame.KEYDOWN:
             if game_screen_boolean:
                 if event.key == pygame.K_BACKSPACE: #jos pitää K_BACKSPACEN alhaalla kumittaako?
@@ -73,10 +71,9 @@ while run:
                 elif event.key == pygame.K_RETURN:
                     CheckAndReviev(hiraganas).check_answer(hiragana_tuple, user_text, screen)
                     hiragana_tuple = GameScreen(screen).draw_hiragana(hiraganas) #valitsee randomilla jonkun hiraganan
-                    user_text = '' 
+                    user_text = ''
                 else:
                     user_text += event.unicode
-
                 #tämä alla oleva koodi aiheuttaa flickering..voiko korjata
                 GameScreen(screen).make_input_field((500, 400, 190, 50), screen)
                 #
@@ -85,7 +82,6 @@ while run:
                 pygame.display.flip() #ehkä turha
 
     pygame.display.flip() 
-
 
 pygame.quit()
 raise SystemExit

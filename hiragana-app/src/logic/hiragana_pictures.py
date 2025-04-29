@@ -33,6 +33,3 @@ class HiraganaPictureLogic():
         Returns: palauttaa sekoitetun listan hiraganoja"""
         random.shuffle(self.list_of_hiraganas)
         return self.list_of_hiraganas
-
-
-
