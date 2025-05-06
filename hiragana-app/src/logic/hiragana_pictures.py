@@ -1,6 +1,6 @@
+import os
 import pygame 
 import random
-import os
 
 class HiraganaPictureLogic():
     """Luokka joka saa hiraganan kuvat listaan, joka sisältää tupleja joissa on
@@ -13,12 +13,13 @@ class HiraganaPictureLogic():
         """
         pygame.init()
         self.list_of_hiraganas = []
-        self.list_of_letters = ["a", "u", "i", "e", "o", "ka","ki","ku","ke", 
+        self.list_of_letters = ["a", "u", "i", "e", "o", "ka","ki","ku","ke",
         "ko", "sa", "shi", "su", "se", "so", "ta"]
 
     def list_hiraganas(self):
         """"Metodi, jossa haetaan jokainen hiraganakuva niihin johtavan polun avulla ja
-        lisätään konstruktorissa luotuun listaan. Listaan myös lisätään tuplemaisesti hiraganakuvan kanssa tavu.
+        lisätään konstruktorissa luotuun listaan. Listaan myös lisätään tuplemaisesti 
+        hiraganakuvan kanssa tavu.
         Returns: palauttaa sekoitetun listan, jossa jokainen hiraganakuva sekä tavu tuplena."""
         for i in self.list_of_letters:
             hiragana_directory = 'src/PNG-hiragana_letters'
