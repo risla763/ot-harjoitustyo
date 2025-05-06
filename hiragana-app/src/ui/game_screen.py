@@ -31,12 +31,6 @@ class GameScreen:
         font = pygame.font.SysFont(None, 50)
         text_surface = font.render("", True, (173, 216, 230))
         self.exit_game_button(self.screen)
-        #
-        if self.exit_game_button(self.screen).collidepoint(pygame.mouse.get_pos()):
-            print("moi")
-            MenuScreen().game_menu_screen(self.screen)
-            #tämä kesken
-        #
         self.screen.blit(text_surface, (100, 200))
 
     def draw_hiragana(self, hiraganas): 

@@ -4,6 +4,10 @@ from ui.game_screen import GameScreen
 from ui.menu_screen_ui import MenuScreen
 from logic.hiragana_pictures import HiraganaPictureLogic
 from logic.answers import CheckAndReviev
+from database.make_database import DB
+
+
+DB().make_table()
 
 #tehtävälista:
 #pylint
@@ -15,12 +19,14 @@ from logic.answers import CheckAndReviev
 #scoreboard ja sql, johon ainakin korkein score
 #käyttäjätunnus ja kirjautuminen
 #tarkista onko toi disable= no-member hyvä
+#vaihda exit game napin paikkaa
 
 pygame.init()  # pylint: disable=no-member
 SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 720
 screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 pygame.display.set_caption('Hiragana learning app')
+highest_score = 0
 
 MenuScreen().game_menu_screen(screen)
 
@@ -36,6 +42,9 @@ scoreboard_button = Buttons(screen).make_rect("score board",(400, 200, 190, 40))
 font = pygame.font.Font(None, 32)
 USER_TEXT = ''
 text_surface = font.render(USER_TEXT, True, (173, 216, 230)) #ui
+score = 0
+
+#muuta tuo ylempi sql queryksi
 
 while RUN:
 
@@ -74,7 +83,7 @@ while RUN:
                     else:
                         continue
                 elif event.key == pygame.K_RETURN:
-                    CheckAndReviev(hiraganas).check_answer(hiragana_tuple, USER_TEXT, screen)
+                    answer, score = CheckAndReviev(hiraganas).check_answer(hiragana_tuple, USER_TEXT, screen, score)
                     hiragana_tuple = GameScreen(screen).draw_hiragana(hiraganas)
                     USER_TEXT = ''
                 else:
@@ -90,8 +99,11 @@ while RUN:
         if GAME_SCREEN_BOOLEAN:
             if exit_game_button.collidepoint(pygame.mouse.get_pos()):
                 MenuScreen().game_menu_screen(screen) 
+                DB().insert(score)
+                highest_score = DB().fetch_from_scoreboard()
                 GAME_MENU_SCREEN_BOOLEAN = True
                 GAME_SCREEN_BOOLEAN = False
+                score = 0
                 start_game_button = Buttons(screen).make_rect("start game",(200, 200, 190, 40))
                 scoreboard_button = Buttons(screen).make_rect("score board",(400, 200, 190, 40))
         

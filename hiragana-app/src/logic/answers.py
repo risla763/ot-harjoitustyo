@@ -14,10 +14,11 @@ class CheckAndReviev:
     def __init__(self, hiraganas):
         """Konstruktori, joka perii listan hiraganoja.
         Args:
-            hiraganas: Lista täynnä hiraganoja ja niitä vastaavia tavuja."""
+            hiraganas: Lista täynnä hiraganoja ja niitä vastaavia tavuja.
+            score: Pitää kirjaa kuinka monta hiraganaa käyttäjä on tällä pelikerralla saanut oikein"""
         self.hiraganas_list = hiraganas
 
-    def check_answer(self, hiragana_tuple, user_input, screen):
+    def check_answer(self, hiragana_tuple, user_input, screen, score):
         """Tarkistaa onko käyttäjän syöttämä tavu sama 
         kuin näytöllä olevaa hiraganaa vastaava tavu
         
@@ -34,13 +35,14 @@ class CheckAndReviev:
         if syllable == user_input:
             answer = True
             self.comment_if_correct(answer, syllable, screen)
-            return answer
+            score += 1
+            return answer, score
         else:
             answer = False
             syllable = syllable.replace('{','')
             syllable = syllable.replace('}','')
             self.comment_if_correct(answer, syllable, screen)
-            return answer
+            return answer, score
 
 
     def comment_if_correct(self, answer, syllable, screen):

@@ -25,6 +25,6 @@ class TestInput(unittest.TestCase):
         self.assertEqual(answer, (True))
 
     def test_answer_wrong(self):
-        """Testaa huomaako ohjelma onko käyttäjän antama vastaus väärin"""
+        """Testaa huomaako ohjelma onko käyttäjän antama vastaus väärin."""
         answer = CheckAndReviev(self.hiraganas).check_answer(self.hiragana_tuple, self.user_input_wrong, self.screen)
         self.assertEqual(answer, (False))

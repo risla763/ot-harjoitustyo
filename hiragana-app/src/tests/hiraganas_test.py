@@ -5,8 +5,8 @@ from logic.hiragana_pictures import HiraganaPictureLogic
 from ui.game_screen import GameScreen
 
 
-class TestInput(unittest.TestCase):
-    """Testaa käyttäjän syöttämää tekstiä"""
+class TestInput(unittest.TestCase): #muuta tämän luokan nimeä
+    """Testaa toimintoja, jotka liittyvät hiraganat sisältävän listan logiikkaan."""
     def setUp(self):
         self.hiraganas_1 = HiraganaPictureLogic().list_hiraganas()
         self.hiraganas_2 = HiraganaPictureLogic().list_hiraganas()
