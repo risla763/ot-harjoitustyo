@@ -2,6 +2,7 @@ import pygame
 from ui.button_ui import Buttons
 from ui.game_screen import GameScreen
 from ui.menu_screen_ui import MenuScreen
+from ui.scoreboard_screen import ScoreBoardScreen
 from logic.hiragana_pictures import HiraganaPictureLogic
 from logic.answers import CheckAndReviev
 from database.make_database import DB
@@ -26,14 +27,14 @@ SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 720
 screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 pygame.display.set_caption('Hiragana learning app')
-highest_score = 0
+highest_score = highest_score = DB().fetch_from_scoreboard()
 
 MenuScreen().game_menu_screen(screen)
 
 RUN = True
 GAME_MENU_SCREEN_BOOLEAN = True
 GAME_SCREEN_BOOLEAN = False
-SCOREBOARD_SCREEN = False
+SCOREBOARD_SCREEN_BOOLEAN = False
 
 start_game_button = Buttons(screen).make_rect("start game",(200, 200, 190, 40))
 scoreboard_button = Buttons(screen).make_rect("score board",(400, 200, 190, 40))
@@ -66,9 +67,10 @@ while RUN:
                     pygame.display.flip() #onko tarvittava
 
                 elif scoreboard_button.collidepoint(pygame.mouse.get_pos()):
-                    GameScreen(screen).game_screen()
+                    ScoreBoardScreen(screen).scoreboard_screen(highest_score)
+                    exit_scoreboard_button = Buttons(screen).make_rect("Exit scoreboard",(700, 200, 200, 40))
                     GAME_MENU_SCREEN_BOOLEAN = False
-                    SCOREBOARD_SCREEN = True
+                    SCOREBOARD_SCREEN_BOOLEAN = True
                 else:
                     break
 
@@ -106,6 +108,13 @@ while RUN:
                 score = 0
                 start_game_button = Buttons(screen).make_rect("start game",(200, 200, 190, 40))
                 scoreboard_button = Buttons(screen).make_rect("score board",(400, 200, 190, 40))
+
+    if event.type == pygame.MOUSEBUTTONDOWN: # pylint: disable=no-member
+        if SCOREBOARD_SCREEN_BOOLEAN:
+            if exit_scoreboard_button.collidepoint(pygame.mouse.get_pos()):
+                MenuScreen().game_menu_screen(screen) 
+                GAME_MENU_SCREEN_BOOLEAN = True
+                SCOREBOARD_SCREEN_BOOLEAN = False
         
 
     pygame.display.flip()
