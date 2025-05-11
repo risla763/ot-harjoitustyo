@@ -22,5 +22,3 @@ class DB:
                 a = tuple[0]
         print(a)
         return a
-
-        #tee testi jos ei ole highest scorea?

@@ -1,5 +1,5 @@
 import os
-import pygame 
+import pygame
 import random
 
 class HiraganaPictureLogic():

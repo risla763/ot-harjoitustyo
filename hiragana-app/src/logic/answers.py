@@ -1,5 +1,4 @@
 import pygame
-import time
 from ui.game_screen import GameScreen
 
 class CheckAndReviev:
@@ -15,7 +14,8 @@ class CheckAndReviev:
         """Konstruktori, joka perii listan hiraganoja.
         Args:
             hiraganas: Lista täynnä hiraganoja ja niitä vastaavia tavuja.
-            score: Pitää kirjaa kuinka monta hiraganaa käyttäjä on tällä pelikerralla saanut oikein"""
+            score: Pitää kirjaa kuinka monta hiraganaa käyttäjä 
+            on tällä pelikerralla saanut oikein"""
         self.hiraganas_list = hiraganas
 
     def check_answer(self, hiragana_tuple, user_input, screen, score):
@@ -53,7 +53,6 @@ class CheckAndReviev:
             amswer: True, jos käyttäjän input oli oikein ja muussa tapauksessa False
             syllable: oikea vastaus (tavu), joka on saatu tuplesta
             screen: pelin näyttö """
-        ticks=pygame.time.get_ticks()
         i = 0
         if answer == True:
             while i < 60:

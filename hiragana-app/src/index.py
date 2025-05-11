@@ -112,10 +112,10 @@ while RUN:
     if event.type == pygame.MOUSEBUTTONDOWN: # pylint: disable=no-member
         if SCOREBOARD_SCREEN_BOOLEAN:
             if exit_scoreboard_button.collidepoint(pygame.mouse.get_pos()):
-                MenuScreen().game_menu_screen(screen) 
+                MenuScreen().game_menu_screen(screen)
                 GAME_MENU_SCREEN_BOOLEAN = True
                 SCOREBOARD_SCREEN_BOOLEAN = False
-        
+
 
     pygame.display.flip()
 
