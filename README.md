@@ -3,7 +3,7 @@
 Olen tekemässä *japaninkielen* hiragana-kirjoitusmerkkien harjoittelua varten sovelluksen, joka on koodattu pythonilla ja sen saa avattua **lokaalisti** koneelle komentoriviltä.
 
 ## Asennus
-Asenna tarvittavat riippuvuudet: poetry install
+Asenna tarvittavat riippuvuudet "hiragana_app" nimisen kansion sisällä: poetry install
 Käynnistä sovellus: "poetry run invoke start" tulee suorittaa kansiossa "hiragana-app" jos ei halua käyttää invokea niin pelin saa myös päälle "hiragana-app" nimisessä kansiossa: poetry run python src/index.py
 
 ## testit
