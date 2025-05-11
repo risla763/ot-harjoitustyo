@@ -12,6 +12,8 @@ Käynnistä sovellus: "poetry run invoke start" tulee suorittaa kansiossa "hirag
 Testit voidaan ajaa sovelluksessa komennolla: 'poetry run invoke tests' ja testeistä tehdyn raportin voi saada: 'poetry run invoke coverage-report'.
 Raportin saa auki esimerkiksi: 'xdg-open htmlcov/index.html'.
 
+pylint ajetaan komennolla: poetry run pylint src
+
 
 
 ## Ohjelmointikieli
